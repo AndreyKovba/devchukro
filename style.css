@@ -1,0 +1,60 @@
+/*
+ Theme Name:   Avada Child
+ Description:  Avada Child Theme
+ Template:     Avada
+ Version:      1.0.0
+ License:      GNU General Public License v2 or later
+ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+ Tags:         light, dark, two-columns, right-sidebar, responsive-layout, accessibility-ready
+ Text Domain:  Avada
+*/
+
+#wrapper .product .product-title{
+    height: 60px;
+}
+
+#wrapper .product .product-details-container .clearfix{
+    height: 30px;
+}
+
+@media only screen and (max-width: 1000px){
+    .fusion-body #wrapper .woocommerce-container .products li{
+        width: 32%;
+        display: inline-block;
+        float: none !important;
+        vertical-align: top;
+    }
+}
+
+@media only screen and (max-width: 800px){
+    .fusion-body #wrapper .woocommerce-container .products li{
+        width: 48%;
+        display: inline-block;
+        float: none !important;
+        vertical-align: top;
+        margin-left: 0px !important;
+        margin-right: 1% !important;
+    }
+}
+
+.top-search-bar{
+    float: right;
+    /*display: inline-block;*/
+    margin-top: 25px;
+    margin-left: 50px;
+}
+
+.bottom-search-bar{
+    display: none;
+}
+
+@media only screen and (max-width: 1050px){
+    .top-search-bar{
+        display: none;
+    }
+
+    .bottom-search-bar{
+        display: block;
+        margin: 0px 30px 50px 30px;
+    }
+}
