@@ -68,11 +68,8 @@
     }
 }
 
-@media (max-width: 800px){
-    #wrapper .fusion-mobile-menu-design-modern .fusion-secondary-menu > ul > li {
-        display: block;
-    }
-    .search-in-menu{
-        float: none;
-    }
+.search-out-menu{
+    margin: 10px 30px;
+    position: relative;
+    z-index: 20;
 }

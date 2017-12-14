@@ -22,27 +22,68 @@ function avada_child_after_main_container() {
     ?>
     <script>
         jQuery(document).ready(function () {
-            var searchForm = '<div class="search-in-menu" style="display:none;"><?php
-                echo str_replace("'", '"', str_replace("\n", " ", get_search_form(false) ) );
-            ?></div>';
+            function isSmallScreen() {
+                return jQuery(window).width() * 1 <= 600
+            }
+
+            var searchForm = '<?php
+                echo str_replace("'", '"', str_replace("\n", " ", get_search_form(false)));
+                ?>';
             var pattern = '#menu-top-secondary-menu a[href="#search-in-menu"]';
+            var isSearchOpen = false;
+            var wasSmallScreen = isSmallScreen();
             jQuery(pattern).parent().append('<div class="search-in-menu-overlay"></div>');
-            jQuery(pattern).parent().append(searchForm);
+            jQuery(pattern).parent().append('<div class="search-in-menu" style="display:none;">' + searchForm + '</div>');
+            jQuery(pattern).parent().parent().prepend('<div class="search-out-menu" style="display:none;">' + searchForm + '</div>');
+
+            jQuery( window ).resize(function() {
+                if( isSearchOpen && wasSmallScreen !== isSmallScreen() ){
+                    var searchInMenu = jQuery('.search-in-menu');
+                    var searchInMenuLink = searchInMenu.parent().children('a');
+                    var searchOutMenu = jQuery('.search-out-menu');
+                    if(wasSmallScreen){
+                        searchOutMenu.hide();
+                        searchInMenu.show();
+                        searchInMenuLink.hide();
+                    }
+                    else{
+                        searchOutMenu.show();
+                        searchInMenu.hide();
+                        searchInMenuLink.show();
+                    }
+                    wasSmallScreen = !wasSmallScreen;
+                }
+            });
 
             jQuery(document).on('click', pattern, function(event){
                 event.preventDefault();
                 var parent = jQuery(this).parent();
-                jQuery(this).hide();
+                if( isSmallScreen() ){
+                    parent.parent().find('.search-out-menu').fadeIn(500);
+                }
+                else{
+                    jQuery(this).hide();
+                    parent.find('.search-in-menu').fadeIn(500);
+                }
                 parent.find('.search-in-menu-overlay').show();
-                parent.find('.search-in-menu').fadeIn(500);
+                isSearchOpen = true;
             });
+
             jQuery(document).on('click', '.search-in-menu-overlay', function(event){
                 event.preventDefault();
                 var parent = jQuery(this).parent();
                 parent.find('.search-in-menu-overlay').hide();
-                parent.find('.search-in-menu').fadeOut(300, function(){
-                    parent.find('a[href="#search-in-menu"]').show();
-                });
+                if( isSmallScreen() ){
+                    parent.parent().find('.search-out-menu').fadeOut(300, function () {
+                        parent.find('a[href="#search-in-menu"]').show();
+                    });
+                }
+                else {
+                    parent.find('.search-in-menu').fadeOut(300, function () {
+                        parent.find('a[href="#search-in-menu"]').show();
+                    });
+                }
+                isSearchOpen = false;
             });
         });
     </script>
