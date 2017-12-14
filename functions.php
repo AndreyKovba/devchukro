@@ -1,9 +1,7 @@
 <?php
 
 function my_theme_enqueue_styles() {
-
-    $parent_style = 'parent-style'; // This is 'twentyfifteen-style' for the Twenty Fifteen theme.
-
+    $parent_style = 'parent-style';
     wp_enqueue_style( $parent_style, get_template_directory_uri() . '/style.css?v=1312171' );
     wp_enqueue_style( 'child-style',
         get_stylesheet_directory_uri() . '/style.css?v=1312171',
@@ -12,6 +10,12 @@ function my_theme_enqueue_styles() {
     );
 }
 add_action( 'wp_enqueue_scripts', 'my_theme_enqueue_styles' );
+
+function child_theme_translation() {
+    load_child_theme_textdomain( 'Avada', get_stylesheet_directory() . '/languages' );
+}
+add_action( 'after_setup_theme', 'child_theme_translation' );
+
 
 add_action( 'avada_after_main_container','avada_child_after_main_container', 10 );
 function avada_child_after_main_container() {
