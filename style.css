@@ -18,7 +18,7 @@
 }
 
 @media only screen and (max-width: 1000px){
-    .fusion-body #wrapper .woocommerce-container .products li{
+    .fusion-body #wrapper .woocommerce .products li{
         width: 32%;
         display: inline-block;
         float: none !important;
@@ -27,7 +27,7 @@
 }
 
 @media only screen and (max-width: 800px){
-    .fusion-body #wrapper .woocommerce-container .products li{
+    .fusion-body #wrapper .woocommerce .products li{
         width: 48%;
         display: inline-block;
         float: none !important;
