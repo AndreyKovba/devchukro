@@ -27,7 +27,8 @@
 }
 
 @media only screen and (max-width: 800px){
-    .fusion-body #wrapper .woocommerce .products li{
+    .fusion-body #wrapper .woocommerce .products li,
+    .fusion-body #wrapper .woocommerce-container .products li{
         width: 48%;
         display: inline-block;
         float: none !important;
@@ -76,4 +77,20 @@
 
 .product-buttons a.button-left:last-child {
     float: left;
+}
+
+.product a.button-center:last-child {
+    float: none;
+}
+
+.product a.button-center {
+    display: block;
+    color: #e67fb9;
+    padding: 7px 0px;
+    text-align: center;
+    font-size: 16px;
+}
+.product a.button-center:hover {
+    background: #e95f55;
+    color: white;
 }

@@ -4,7 +4,7 @@ function my_theme_enqueue_styles() {
     $parent_style = 'parent-style';
     wp_enqueue_style( $parent_style, get_template_directory_uri() . '/style.css?v=1312171' );
     wp_enqueue_style( 'child-style',
-        get_stylesheet_directory_uri() . '/style.css?v=201217',
+        get_stylesheet_directory_uri() . '/style.css?v=2012172',
         array( $parent_style ),
         wp_get_theme()->get('Version')
     );
@@ -26,7 +26,7 @@ function themeprefix_add_to_cart_redirect() {
     return $checkout_url;
 }
 
-add_action( 'woocommerce_after_shop_loop_item', 'avada_woocommerce_buy_button', 10 );
+add_action( 'woocommerce_after_shop_loop_item', 'avada_woocommerce_buy_button', 110 );
 
 function avada_woocommerce_buy_button( $args = array() ) {
     global $product;
@@ -61,13 +61,13 @@ function drawBuyButton($args){
     }
     $href .= '&buy=1';
     echo apply_filters( 'woocommerce_loop_add_to_cart_link',
-        sprintf( '<a rel="nofollow" href="%s" data-quantity="%s" data-product_id="%s" data-product_sku="%s" class="button-left %s">%s</a>',
+        sprintf( '<a rel="nofollow" href="%s" data-quantity="%s" data-product_id="%s" data-product_sku="%s" class="button-center %s">%s</a>',
             esc_url( $href ),
             esc_attr( isset( $args['quantity'] ) ? $args['quantity'] : 1 ),
             esc_attr( $product->get_id() ),
             esc_attr( $product->get_sku() ),
             esc_attr( isset( $args['class'] ) ? $args['class'] : 'button' ),
-            esc_html( 'Köpa' )
+            esc_html( 'KÖP' )
         ),
         $product );
 }
