@@ -73,3 +73,7 @@
     position: relative;
     z-index: 20;
 }
+
+.product-buttons a.button-left:last-child {
+    float: left;
+}
