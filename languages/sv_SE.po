@@ -1,5 +1,3 @@
-# Copyright (C) 2015 ThemeFusion
-# This file is distributed under the Themeforest Split Licence.
 msgid ""
 msgstr ""
 "Project-Id-Version: Avada 3.9\n"
@@ -8,56 +6,12 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2017-12-14 10:31+0500\n"
-"Language-Team: \n"
-"X-Generator: Poedit 1.8.7.1\n"
-"Last-Translator: \n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Language: sv_SE\n"
-
-#: templates/blog-layout.php:219
-msgid "0"
-msgstr ""
-
-#: templates/blog-layout.php:219
-msgid "1"
-msgstr ""
-
-#: 404.php:7
-msgid "Oops, This Page Could Not Be Found!"
-msgstr ""
-
-#: 404.php:19 search.php:49
-msgid "Here are some useful links:"
-msgstr ""
-
-#: 404.php:32
-msgid "Search Our Website"
-msgstr ""
-
-#: 404.php:33
-msgid "Can't find what you need? Take a moment and do a search below!"
-msgstr ""
-
-#: 404.php:38 search.php:23 searchform.php:4
-msgid "Search ..."
-msgstr ""
-
-#: bbpress/form-search.php:14 includes/class-avada-layout-bbpress.php:125
-msgid "Search for:"
-msgstr ""
-
-#: bbpress/form-search.php:17 includes/class-avada-layout-bbpress.php:128
-msgid "Search the Forum..."
-msgstr ""
-
-#: bbpress/loop-search-reply.php:38
-msgid "In reply to: "
-msgstr ""
-
-#: bbpress/loop-search-topic.php:44
-msgid "Topic: "
-msgstr ""
+"PO-Revision-Date: 2017-12-15 12:07+0000\n"
+"Language-Team: Swedish\n"
+"X-Generator: Loco - https://localise.biz/\n"
+"Last-Translator: Johan Marmol <johan.marmol@fastdev.se>\n"
+"Plural-Forms: nplurals=2; plural=n != 1\n"
+"Language: sv-SE"
 
 #: bbpress/loop-search-topic.php:49
 msgid "in group forum "
@@ -86,14 +40,6 @@ msgstr ""
 
 #: comments.php:39
 msgid "Comments are closed."
-msgstr ""
-
-#: comments.php:53 contact.php:132
-msgid "Name (required)"
-msgstr ""
-
-#: comments.php:54 contact.php:134
-msgid "Email (required)"
 msgstr ""
 
 #: comments.php:55
@@ -128,18 +74,10 @@ msgstr ""
 msgid "Post Comment"
 msgstr ""
 
-#: contact.php:87
-msgid "Name:"
-msgstr ""
-
 #: contact.php:88 includes/class-fusion-widget-contact-info.php:44
 #: includes/class-fusion-widget-contact-info.php:111
 #: includes/woo-config.php:1432
 msgid "Email:"
-msgstr ""
-
-#: contact.php:89
-msgid "Subject:"
 msgstr ""
 
 #: contact.php:90
@@ -164,14 +102,6 @@ msgstr ""
 
 #: contact.php:125
 msgid "for using our contact form! Your email was successfully sent!"
-msgstr ""
-
-#: contact.php:136
-msgid "Subject"
-msgstr ""
-
-#: contact.php:142
-msgid "Message"
 msgstr ""
 
 #: contact.php:160
@@ -451,8 +381,8 @@ msgstr ""
 
 #: framework/admin/functions/functions.options.php:895
 msgid ""
-"Controls when the desktop header changes to the mobile header. In pixels, "
-"ex: 800px."
+"Controls when the desktop header changes to the mobile header. In pixels, ex:"
+" 800px."
 msgstr ""
 
 #: framework/admin/functions/functions.options.php:900
@@ -462,10 +392,10 @@ msgstr ""
 #: framework/admin/functions/functions.options.php:901
 msgid ""
 "Controls when the site content area changes to the mobile layout. This "
-"includes all content on the page except for the header area and blog/"
-"portfolio grid sections. If you are using a side header, the breakpoint "
-"value you enter will automatically include the side header width.  In "
-"pixels, ex: 800px."
+"includes all content on the page except for the header area and "
+"blog/portfolio grid sections. If you are using a side header, the breakpoint "
+"value you enter will automatically include the side header width.  In pixels,"
+" ex: 800px."
 msgstr ""
 
 #: framework/admin/functions/functions.options.php:907
@@ -1091,9 +1021,8 @@ msgstr ""
 
 #: framework/admin/functions/functions.options.php:1361
 msgid ""
-"If retina logo is uploaded, enter the sticky header logo (1x) version "
-"height, do not enter the retina logo height. Use a number without 'px', ex: "
-"40 "
+"If retina logo is uploaded, enter the sticky header logo (1x) version height,"
+" do not enter the retina logo height. Use a number without 'px', ex: 40 "
 msgstr ""
 
 #: framework/admin/functions/functions.options.php:1375
@@ -1459,24 +1388,6 @@ msgid "Choose to show or hide the page title bar text."
 msgstr ""
 
 #: framework/admin/functions/functions.options.php:1703
-#: framework/metaboxes/tabs/tab_page.php:41
-#: framework/metaboxes/tabs/tab_pagetitlebar.php:20
-#: framework/metaboxes/tabs/tab_portfolio_page.php:52
-#: framework/metaboxes/tabs/tab_portfolio_post.php:141
-#: framework/metaboxes/tabs/tab_portfolio_post.php:152
-#: framework/metaboxes/tabs/tab_portfolio_post.php:163
-#: framework/metaboxes/tabs/tab_post.php:76
-#: framework/metaboxes/tabs/tab_post.php:87
-#: framework/metaboxes/tabs/tab_post.php:98
-#: framework/metaboxes/tabs/tab_post.php:109
-#: framework/metaboxes/tabs/tab_post.php:120
-#: framework/metaboxes/tabs/tab_post.php:131 includes/woo-config.php:343
-#: includes/woo-config.php:345 includes/woo-config.php:346
-#: includes/woo-config.php:347
-msgid "Show"
-msgstr ""
-
-#: framework/admin/functions/functions.options.php:1703
 #: framework/metaboxes/tabs/tab_page.php:42
 #: framework/metaboxes/tabs/tab_pagetitlebar.php:10
 #: framework/metaboxes/tabs/tab_pagetitlebar.php:21
@@ -1755,8 +1666,8 @@ msgstr ""
 
 #: framework/admin/functions/functions.options.php:1903
 msgid ""
-"The entire height of the footer area (widgets + copyright). <a href='https://"
-"theme-fusion.com/avada-doc/footer-special-effects/' target='_blank'>View "
+"The entire height of the footer area (widgets + copyright). <a href='https:"
+"//theme-fusion.com/avada-doc/footer-special-effects/' target='_blank'>View "
 "tutorial here</a>. Set a static height in px to enable sticky footer effect. "
 "ex: 200px.."
 msgstr ""
@@ -2189,8 +2100,8 @@ msgstr ""
 
 #: framework/admin/functions/functions.options.php:2406
 msgid ""
-"Select the sidebar 1 position for the search pages. If sidebar 2 is "
-"selected, it will display on the opposite side."
+"Select the sidebar 1 position for the search pages. If sidebar 2 is selected,"
+" it will display on the opposite side."
 msgstr ""
 
 #: framework/admin/functions/functions.options.php:2423
@@ -3254,8 +3165,8 @@ msgstr ""
 
 #: framework/admin/functions/functions.options.php:3620
 msgid ""
-"Controls the bottom margin for all column sizes. In pixels or percentage, "
-"ex: 10px or 10%."
+"Controls the bottom margin for all column sizes. In pixels or percentage, ex:"
+" 10px or 10%."
 msgstr ""
 
 #: framework/admin/functions/functions.options.php:3625
@@ -4157,8 +4068,8 @@ msgstr ""
 
 #: framework/admin/functions/functions.options.php:4395
 msgid ""
-"Controls the size of the counter body text. Enter the font size without "
-"'px'. Default is 13."
+"Controls the size of the counter body text. Enter the font size without 'px'."
+" Default is 13."
 msgstr ""
 
 #: framework/admin/functions/functions.options.php:4400
@@ -5040,8 +4951,8 @@ msgstr ""
 
 #: framework/admin/functions/functions.options.php:5255
 msgid ""
-"This text will display in the page title bar of the assigned blog page. "
-"Note: This option only works, if the blog page is not a static page."
+"This text will display in the page title bar of the assigned blog page. Note:"
+" This option only works, if the blog page is not a static page."
 msgstr ""
 
 #: framework/admin/functions/functions.options.php:5260
@@ -5593,11 +5504,6 @@ msgstr ""
 msgid "Check the box to show the tumblr sharing icon in blog posts."
 msgstr ""
 
-#: framework/admin/functions/functions.options.php:5785
-#: framework/admin/functions/functions.options.php:5849
-msgid "Pinterest"
-msgstr ""
-
 #: framework/admin/functions/functions.options.php:5786
 msgid "Check the box to show the pinterest sharing icon in blog posts."
 msgstr ""
@@ -5813,11 +5719,6 @@ msgstr ""
 
 #: framework/admin/functions/functions.options.php:5946
 msgid "Insert your custom link to show the VK icon. Leave blank to hide icon."
-msgstr ""
-
-#: framework/admin/functions/functions.options.php:5951
-#: framework/admin/functions/functions.options.php:6271
-msgid "Email Address"
 msgstr ""
 
 #: framework/admin/functions/functions.options.php:5952
@@ -6191,8 +6092,8 @@ msgstr ""
 
 #: framework/admin/functions/functions.options.php:6256
 msgid ""
-"Set the width that will be used for videos inside the lightbox. In pixel, "
-"ex. 800px"
+"Set the width that will be used for videos inside the lightbox. In pixel, ex."
+" 800px"
 msgstr ""
 
 #: framework/admin/functions/functions.options.php:6261
@@ -6286,17 +6187,13 @@ msgid ""
 "distance to menu/page title. In pixels, ex: 100px."
 msgstr ""
 
-#: framework/admin/functions/functions.options.php:6345
-msgid "Google Map Address"
-msgstr ""
-
 #: framework/admin/functions/functions.options.php:6346
 msgid ""
 "Add your address to the location you wish to show on the map. Single address "
 "ex: 775 New York Ave, Brooklyn, Kings, New York 11203. If the location is "
-"off, please try to use long/lat coordinates with latlng=. ex: "
-"latlng=12.381068,-1.492711.<br />For multiple addresses, separate addresses "
-"by using the | symbol. ex: Address 1|Address 2|Address 3."
+"off, please try to use long/lat coordinates with latlng=. ex: latlng=12."
+"381068,-1.492711.<br />For multiple addresses, separate addresses by using "
+"the | symbol. ex: Address 1|Address 2|Address 3."
 msgstr ""
 
 #: framework/admin/functions/functions.options.php:6351
@@ -7603,8 +7500,8 @@ msgstr ""
 
 #: framework/metaboxes/options/options_slide.php:26
 msgid ""
-"For example the Video ID for http://www.youtube.com/<strong>LOfeCR7KqUs</"
-"strong> is <strong>LOfeCR7KqUs</strong>"
+"For example the Video ID for http://www.youtube.com/<strong>"
+"LOfeCR7KqUs</strong> is <strong>LOfeCR7KqUs</strong>"
 msgstr ""
 
 #: framework/metaboxes/options/options_slide.php:30
@@ -7675,8 +7572,8 @@ msgstr ""
 
 #: framework/metaboxes/options/options_slide.php:61
 msgid ""
-"Select a color to show over the video as an overlay. Hex color code, "
-"<strong>ex: #fff</strong>"
+"Select a color to show over the video as an overlay. Hex color code, <strong>"
+"ex: #fff</strong>"
 msgstr ""
 
 #: framework/metaboxes/options/options_slide.php:65
@@ -7820,8 +7717,8 @@ msgstr ""
 
 #: framework/metaboxes/options/options_slide.php:131
 msgid ""
-"Select a color for the heading font. Hex color code, ex: #fff. "
-"<strong>Default: #fff</strong>"
+"Select a color for the heading font. Hex color code, ex: #fff. <strong>"
+"Default: #fff</strong>"
 msgstr ""
 
 #: framework/metaboxes/options/options_slide.php:135
@@ -7840,8 +7737,8 @@ msgstr ""
 
 #: framework/metaboxes/options/options_slide.php:142
 msgid ""
-"Select a color for the heading background. Hex color code, ex: #000. "
-"<strong>Default: #000</strong>"
+"Select a color for the heading background. Hex color code, ex: #000. <strong>"
+"Default: #000</strong>"
 msgstr ""
 
 #: framework/metaboxes/options/options_slide.php:146
@@ -7870,8 +7767,8 @@ msgstr ""
 
 #: framework/metaboxes/options/options_slide.php:174
 msgid ""
-"Select a color for the caption font. Hex color code, ex: #fff. "
-"<strong>Default: #fff</strong>"
+"Select a color for the caption font. Hex color code, ex: #fff. <strong>"
+"Default: #fff</strong>"
 msgstr ""
 
 #: framework/metaboxes/options/options_slide.php:178
@@ -7890,8 +7787,8 @@ msgstr ""
 
 #: framework/metaboxes/options/options_slide.php:185
 msgid ""
-"Select a color for the caption background. Hex color code, ex: #000. "
-"<strong>Default: #000</strong>"
+"Select a color for the caption background. Hex color code, ex: #000. <strong>"
+"Default: #000</strong>"
 msgstr ""
 
 #: framework/metaboxes/options/options_slide.php:189
@@ -8637,8 +8534,8 @@ msgstr ""
 msgid ""
 "To make it easier for you to edit and save the imported content, you may "
 "want to reassign the author of the imported item to an existing user of this "
-"site. For example, you may want to import all the entries as <code>admin</"
-"code>s entries."
+"site. For example, you may want to import all the entries as <code>"
+"admin</code>s entries."
 msgstr ""
 
 #: framework/plugins/importer/wordpress-importer.php:269
@@ -9094,8 +8991,8 @@ msgstr ""
 msgid ""
 "These are plugins we include or offer design integration for with Avada. "
 "Fusion Core is the only required plugin needed to use Avada. You can "
-"activate, deactivate or update the plugins from this tab. <a href='http://"
-"theme-fusion.us2.list-manage2.com/subscribe?"
+"activate, deactivate or update the plugins from this tab. <a href='http:"
+"//theme-fusion.us2.list-manage2.com/subscribe?"
 "u=4345c7e8c4f2826cc52bb84cd&id=af30829ace' target='_blank'>Subscribe to our "
 "newsletter</a> to be notified about new products being released in the "
 "future!"
@@ -9111,11 +9008,6 @@ msgstr ""
 
 #: includes/admin-screens/fusion-plugins.php:56
 msgid "Active:"
-msgstr ""
-
-#: includes/admin-screens/fusion-plugins.php:69
-#: includes/class-tgm-plugin-activation.php:2164
-msgid "Required"
 msgstr ""
 
 #: includes/admin-screens/fusion-plugins.php:77
@@ -9344,9 +9236,9 @@ msgstr ""
 msgid ""
 "%s - We recommend setting memory to at least <strong>128MB</strong>. <br /> "
 "To import classic demo data, <strong>256MB</strong> of memory limit is "
-"required. <br /> Please define memory limit in <strong>wp-config.php</"
-"strong> file. To learn how, see: <a href=\"%s\" target=\"_blank\">Increasing "
-"memory allocated to PHP.</a>"
+"required. <br /> Please define memory limit in <strong>wp-config.php</strong>"
+" file. To learn how, see: <a href=\"%s\" target=\"_blank\">Increasing memory "
+"allocated to PHP.</a>"
 msgstr ""
 
 #: includes/admin-screens/system-status.php:70
@@ -9659,16 +9551,6 @@ msgstr ""
 msgid "Edit profile"
 msgstr ""
 
-#: includes/avada-functions.php:372 includes/avada-functions.php:374
-#: includes/avada-functions.php:1300 includes/woo-config.php:1190
-msgid "View Cart"
-msgstr ""
-
-#: includes/avada-functions.php:391 includes/class-avada-scripts.php:272
-#: includes/woo-config.php:198
-msgid "Details"
-msgstr ""
-
 #: includes/avada-functions.php:787 includes/avada-functions.php:789
 #: single-avada_portfolio.php:218
 msgid "By"
@@ -9708,10 +9590,6 @@ msgstr ""
 msgid "Username"
 msgstr ""
 
-#: includes/avada-functions.php:1217
-msgid "Password"
-msgstr ""
-
 #: includes/avada-functions.php:1218
 msgid "Remember Me"
 msgstr ""
@@ -9722,18 +9600,6 @@ msgstr ""
 
 #: includes/avada-functions.php:1228
 msgid "Logout"
-msgstr ""
-
-#: includes/avada-functions.php:1271
-msgid "Item(s)"
-msgstr ""
-
-#: includes/avada-functions.php:1273
-msgid "Cart"
-msgstr ""
-
-#: includes/avada-functions.php:1301
-msgid "Checkout"
 msgstr ""
 
 #: includes/avada-tgm.php:92 includes/class-tgm-plugin-activation.php:301
@@ -9765,9 +9631,9 @@ msgid ""
 "Contact the administrator of this site for help on getting the plugin "
 "installed."
 msgid_plural ""
-"Sorry, but you do not have the correct permissions to install the %s "
-"plugins. Contact the administrator of this site for help on getting the "
-"plugins installed."
+"Sorry, but you do not have the correct permissions to install the %s plugins."
+" Contact the administrator of this site for help on getting the plugins "
+"installed."
 msgstr[0] ""
 msgstr[1] ""
 
@@ -9779,9 +9645,9 @@ msgstr[1] ""
 
 #: includes/avada-tgm.php:101
 msgid ""
-"Sorry, but you do not have the correct permissions to activate the %s "
-"plugin. Contact the administrator of this site for help on getting the "
-"plugin activated."
+"Sorry, but you do not have the correct permissions to activate the %s plugin."
+" Contact the administrator of this site for help on getting the plugin "
+"activated."
 msgid_plural ""
 "Sorry, but you do not have the correct permissions to activate the %s "
 "plugins. Contact the administrator of this site for help on getting the "
@@ -9882,10 +9748,6 @@ msgstr ""
 msgid "Go to..."
 msgstr ""
 
-#: includes/class-avada-scripts.php:263
-msgid "Shopping Cart"
-msgstr ""
-
 #: includes/class-avada-scripts.php:267
 msgid "All posts displayed."
 msgstr ""
@@ -9936,8 +9798,8 @@ msgstr ""
 
 #: includes/class-avada-upgrade.php:223
 msgid ""
-"<a href=\"%1$s\" class=\"%2$s\" style=\"margin:0 4px;\">Dismiss this notice</"
-"a>"
+"<a href=\"%1$s\" class=\"%2$s\" style=\"margin:0 4px;\">Dismiss this "
+"notice</a>"
 msgstr ""
 
 #: includes/class-fusion-breadcrumbs.php:85
@@ -10007,10 +9869,6 @@ msgstr ""
 #: includes/class-fusion-widget-social-links.php:265
 #: includes/class-fusion-widget-tweets.php:163
 msgid "Title:"
-msgstr ""
-
-#: includes/class-fusion-widget-contact-info.php:95
-msgid "Address:"
 msgstr ""
 
 #: includes/class-fusion-widget-contact-info.php:115
@@ -10211,10 +10069,6 @@ msgstr ""
 msgid "No posts have been published yet."
 msgstr ""
 
-#: includes/class-fusion-widget-tabs.php:149
-msgid "says:"
-msgstr ""
-
 #: includes/class-fusion-widget-tabs.php:151
 msgid "%1$s on %2$s"
 msgstr ""
@@ -10250,18 +10104,6 @@ msgstr ""
 
 #: includes/class-fusion-widget-tabs.php:225
 msgid "Show popular posts"
-msgstr ""
-
-#: includes/class-fusion-widget-tabs.php:229
-msgid "Show recent posts"
-msgstr ""
-
-#: includes/class-fusion-widget-tabs.php:233
-msgid "Show comments"
-msgstr ""
-
-#: includes/class-fusion-widget-tweets.php:95
-msgid "Recent Tweets"
 msgstr ""
 
 #: includes/class-fusion-widget-tweets.php:160
@@ -10314,10 +10156,6 @@ msgstr ""
 msgid "Twitter Username:"
 msgstr ""
 
-#: includes/class-fusion-widget-tweets.php:207
-msgid "Number of Tweet (max. 20 tweets possible):"
-msgstr ""
-
 #: includes/class-fusion-widget-tweets.php:212
 msgid "Max. Width (has to be between 180 and 520):"
 msgstr ""
@@ -10330,64 +10168,8 @@ msgstr ""
 msgid "Color Scheme:"
 msgstr ""
 
-#: includes/class-fusion-widget-tweets.php:224
-msgid "Light"
-msgstr ""
-
-#: includes/class-fusion-widget-tweets.php:225
-msgid "Dark"
-msgstr ""
-
 #: includes/class-fusion-widget-tweets.php:230
 msgid "Link Color (leave empty for Theme default link color):"
-msgstr ""
-
-#: includes/class-fusion-widget-tweets.php:235
-msgid "Border Color:"
-msgstr ""
-
-#: includes/class-fusion-widget-tweets.php:241
-msgid "Show Header"
-msgstr ""
-
-#: includes/class-fusion-widget-tweets.php:246
-msgid "Show Footer"
-msgstr ""
-
-#: includes/class-fusion-widget-tweets.php:251
-msgid "Show Borders"
-msgstr ""
-
-#: includes/class-fusion-widget-tweets.php:256
-msgid "Transparent Background"
-msgstr ""
-
-#: includes/class-fusion-widget-tweets.php:582
-msgid "second"
-msgstr ""
-
-#: includes/class-fusion-widget-tweets.php:582
-msgid "minute"
-msgstr ""
-
-#: includes/class-fusion-widget-tweets.php:582
-msgid "hour"
-msgstr ""
-
-#: includes/class-fusion-widget-tweets.php:582
-msgid "day"
-msgstr ""
-
-#: includes/class-fusion-widget-tweets.php:582
-msgid "week"
-msgstr ""
-
-#: includes/class-fusion-widget-tweets.php:582
-msgid "month"
-msgstr ""
-
-#: includes/class-fusion-widget-tweets.php:582
-msgid "year"
 msgstr ""
 
 #: includes/class-fusion-widget-tweets.php:582
@@ -10395,41 +10177,7 @@ msgid "decade"
 msgstr ""
 
 #: includes/class-fusion-widget-tweets.php:583
-msgid "seconds"
-msgstr ""
-
-#: includes/class-fusion-widget-tweets.php:583
-msgid "minutes"
-msgstr ""
-
-#: includes/class-fusion-widget-tweets.php:583
-#: tribe-events/pro/widgets/countdown-widget.php:25
-msgid "hours"
-msgstr ""
-
-#: includes/class-fusion-widget-tweets.php:583
-#: tribe-events/pro/widgets/countdown-widget.php:21
-msgid "days"
-msgstr ""
-
-#: includes/class-fusion-widget-tweets.php:583
-msgid "weeks"
-msgstr ""
-
-#: includes/class-fusion-widget-tweets.php:583
-msgid "months"
-msgstr ""
-
-#: includes/class-fusion-widget-tweets.php:583
-msgid "years"
-msgstr ""
-
-#: includes/class-fusion-widget-tweets.php:583
 msgid "decades"
-msgstr ""
-
-#: includes/class-fusion-widget-tweets.php:587
-msgid "ago"
 msgstr ""
 
 #: includes/class-tgm-plugin-activation.php:305
@@ -10575,10 +10323,6 @@ msgid ""
 "not packaged in a folder."
 msgstr ""
 
-#: includes/class-tgm-plugin-activation.php:2167
-msgid "Recommended"
-msgstr ""
-
 #: includes/class-tgm-plugin-activation.php:2183
 msgid "WordPress Repository"
 msgstr ""
@@ -10597,10 +10341,6 @@ msgstr ""
 
 #: includes/class-tgm-plugin-activation.php:2210
 msgid "Installed But Not Activated"
-msgstr ""
-
-#: includes/class-tgm-plugin-activation.php:2212
-msgid "Active"
 msgstr ""
 
 #: includes/class-tgm-plugin-activation.php:2218
@@ -10659,24 +10399,8 @@ msgstr ""
 msgid "Source"
 msgstr ""
 
-#: includes/class-tgm-plugin-activation.php:2435
-msgid "Type"
-msgstr ""
-
-#: includes/class-tgm-plugin-activation.php:2440
-msgid "Status"
-msgstr ""
-
 #: includes/class-tgm-plugin-activation.php:2567
 msgid "Upgrade message from the plugin author:"
-msgstr ""
-
-#: includes/class-tgm-plugin-activation.php:2606
-msgid "Update"
-msgstr ""
-
-#: includes/class-tgm-plugin-activation.php:2609
-msgid "Activate"
 msgstr ""
 
 #: includes/class-tgm-plugin-activation.php:2640
@@ -10729,16 +10453,6 @@ msgstr ""
 msgid "%1$s installed and activated successfully."
 msgstr ""
 
-#: includes/class-tgm-plugin-activation.php:3338
-#: includes/class-tgm-plugin-activation.php:3344
-msgid "Show Details"
-msgstr ""
-
-#: includes/class-tgm-plugin-activation.php:3338
-#: includes/class-tgm-plugin-activation.php:3344
-msgid "Hide Details"
-msgstr ""
-
 #: includes/class-tgm-plugin-activation.php:3339
 msgid "All installations and activations have been completed."
 msgstr ""
@@ -10769,89 +10483,6 @@ msgstr ""
 msgid "Return to the Dashboard"
 msgstr ""
 
-#: includes/dynamic_css.php:8485
-msgid "Please enter correct details for this required field."
-msgstr ""
-
-#: includes/woo-config.php:145
-msgid "Out of Stock"
-msgstr ""
-
-#: includes/woo-config.php:227
-msgid "Search..."
-msgstr ""
-
-#: includes/woo-config.php:289 includes/woo-config.php:322
-msgid "Date"
-msgstr ""
-
-#: includes/woo-config.php:292 includes/woo-config.php:321
-#: woocommerce/cart/cart.php:27 woocommerce/compatibility/2.4/cart/cart.php:27
-msgid "Price"
-msgstr ""
-
-#: includes/woo-config.php:295 includes/woo-config.php:323
-msgid "Popularity"
-msgstr ""
-
-#: includes/woo-config.php:298 includes/woo-config.php:324
-msgid "Rating"
-msgstr ""
-
-#: includes/woo-config.php:301 includes/woo-config.php:320
-#: woocommerce/compatibility/2.4/single-product-reviews.php:65
-#: woocommerce/single-product-reviews.php:65
-msgid "Name"
-msgstr ""
-
-#: includes/woo-config.php:304 includes/woo-config.php:319
-msgid "Default Order"
-msgstr ""
-
-#: includes/woo-config.php:317 includes/woo-config.php:319
-#: includes/woo-config.php:320 includes/woo-config.php:321
-#: includes/woo-config.php:322 includes/woo-config.php:323
-#: includes/woo-config.php:324
-msgid "Sort by"
-msgstr ""
-
-#: includes/woo-config.php:343
-msgid " Products"
-msgstr ""
-
-#: includes/woo-config.php:345 includes/woo-config.php:346
-#: includes/woo-config.php:347
-msgid "Products"
-msgstr ""
-
-#: includes/woo-config.php:650
-msgid "Share On Facebook"
-msgstr ""
-
-#: includes/woo-config.php:656
-msgid "Tweet This Product"
-msgstr ""
-
-#: includes/woo-config.php:663
-msgid "Pin This Product"
-msgstr ""
-
-#: includes/woo-config.php:669
-msgid "Mail This Product"
-msgstr ""
-
-#: includes/woo-config.php:743
-msgid "You Have %d Item In Your Cart"
-msgstr ""
-
-#: includes/woo-config.php:745
-msgid "You Have %d Items In Your Cart"
-msgstr ""
-
-#: includes/woo-config.php:780
-msgid "Calculate Shipping"
-msgstr ""
-
 #: includes/woo-config.php:788
 msgid "Select a country&hellip;"
 msgstr ""
@@ -10869,40 +10500,12 @@ msgstr ""
 msgid "City"
 msgstr ""
 
-#: includes/woo-config.php:851
-msgid "Postcode / Zip"
-msgstr ""
-
-#: includes/woo-config.php:859
-msgid "Update Totals"
-msgstr ""
-
-#: includes/woo-config.php:884 includes/woo-config.php:950
-msgid "Have A Promotional Code?"
-msgstr ""
-
 #: includes/woo-config.php:887 includes/woo-config.php:955
 msgid "Coupon code"
 msgstr ""
 
-#: includes/woo-config.php:889
-msgid "Apply"
-msgstr ""
-
 #: includes/woo-config.php:960
 msgid "Apply Coupon"
-msgstr ""
-
-#: includes/woo-config.php:979 includes/woo-config.php:1452
-#: woocommerce/compatibility/2.4/myaccount/form-edit-address.php:16
-#: woocommerce/myaccount/form-edit-address.php:16
-msgid "Billing Address"
-msgstr ""
-
-#: includes/woo-config.php:985 includes/woo-config.php:1472
-#: woocommerce/compatibility/2.4/myaccount/form-edit-address.php:16
-#: woocommerce/myaccount/form-edit-address.php:16
-msgid "Shipping Address"
 msgstr ""
 
 #: includes/woo-config.php:995
@@ -10919,25 +10522,9 @@ msgstr ""
 msgid "Continue"
 msgstr ""
 
-#: includes/woo-config.php:1171 includes/woo-config.php:1173
-msgid "Hello"
-msgstr ""
-
 #: includes/woo-config.php:1211
 msgid "View Downloads"
 msgstr ""
-
-#: includes/woo-config.php:1239
-msgid "View Orders"
-msgstr ""
-
-#: includes/woo-config.php:1247
-msgid "Change Address"
-msgstr ""
-
-#: includes/woo-config.php:1252 includes/woo-config.php:1271
-msgid "Edit Account"
-msgstr "Redigera Konto"
 
 #: includes/woo-config.php:1275
 msgid "First name"
@@ -10947,28 +10534,8 @@ msgstr ""
 msgid "Last name"
 msgstr ""
 
-#: includes/woo-config.php:1285
-msgid "Email address"
-msgstr ""
-
-#: includes/woo-config.php:1290
-msgid "Current Password (leave blank to leave unchanged)"
-msgstr ""
-
-#: includes/woo-config.php:1295
-msgid "New Password (leave blank to leave unchanged)"
-msgstr ""
-
-#: includes/woo-config.php:1300
-msgid "Confirm New Password"
-msgstr ""
-
 #: includes/woo-config.php:1307
 msgid "Save changes"
-msgstr ""
-
-#: includes/woo-config.php:1332
-msgid "Order Details"
 msgstr ""
 
 #: includes/woo-config.php:1337 woocommerce/cart/cart.php:28
@@ -11129,16 +10696,6 @@ msgstr ""
 msgid "Remove this item"
 msgstr ""
 
-#: woocommerce/cart/cart.php:131
-#: woocommerce/compatibility/2.4/cart/cart.php:131
-msgid "Update Cart"
-msgstr ""
-
-#: woocommerce/cart/cart.php:132
-#: woocommerce/compatibility/2.4/cart/cart.php:132
-msgid "Proceed to Checkout"
-msgstr ""
-
 #: woocommerce/checkout/form-pay.php:24
 #: woocommerce/compatibility/2.4/checkout/form-pay.php:17
 msgid "Your order"
@@ -11165,8 +10722,8 @@ msgstr ""
 #: woocommerce/checkout/thankyou.php:25
 #: woocommerce/compatibility/2.4/checkout/thankyou.php:25
 msgid ""
-"Unfortunately your order cannot be processed as the originating bank/"
-"merchant has declined your transaction."
+"Unfortunately your order cannot be processed as the originating "
+"bank/merchant has declined your transaction."
 msgstr ""
 
 #: woocommerce/checkout/thankyou.php:29
@@ -11214,24 +10771,6 @@ msgstr ""
 msgid "Pay for order"
 msgstr ""
 
-#: woocommerce/compatibility/2.4/myaccount/form-edit-address.php:27
-#: woocommerce/myaccount/form-edit-address.php:27
-msgid "Hello <strong>%1$s</strong> (not %1$s? <a href=\"%2$s\">Sign out</a>)."
-msgstr ""
-
-#: woocommerce/compatibility/2.4/myaccount/form-edit-address.php:32
-#: woocommerce/myaccount/form-edit-address.php:32
-msgid ""
-"From your account dashboard you can view your recent orders, manage your "
-"shipping and billing addresses and <a href=\"%s\">edit your password and "
-"account details</a>."
-msgstr ""
-
-#: woocommerce/compatibility/2.4/myaccount/form-edit-address.php:71
-#: woocommerce/myaccount/form-edit-address.php:71
-msgid "Save Address"
-msgstr ""
-
 #: woocommerce/compatibility/2.4/single-product/add-to-cart/variable.php:23
 #: woocommerce/single-product/add-to-cart/variable.php:31
 msgid "This product is currently out of stock and unavailable."
@@ -11245,34 +10784,34 @@ msgstr ""
 #: woocommerce/compatibility/2.4/single-product/tabs/description.php:14
 #: woocommerce/single-product/tabs/description.php:14
 msgid "Product Description"
-msgstr ""
+msgstr "Produktbeskrivning"
 
 #: woocommerce/compatibility/2.4/single-product-reviews.php:24
 #: woocommerce/single-product-reviews.php:24
 msgid "%s review for %s"
 msgid_plural "%s reviews for %s"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%s recension för %s"
+msgstr[1] "%s recensioner för %s"
 
 #: woocommerce/compatibility/2.4/single-product-reviews.php:26
 #: woocommerce/single-product-reviews.php:26
 msgid "Reviews"
-msgstr ""
+msgstr "Recensioner"
 
 #: woocommerce/compatibility/2.4/single-product-reviews.php:47
 #: woocommerce/single-product-reviews.php:47
 msgid "There are no reviews yet."
-msgstr ""
+msgstr "Det finns ännu inga recensioner.."
 
 #: woocommerce/compatibility/2.4/single-product-reviews.php:60
 #: woocommerce/single-product-reviews.php:60
 msgid "Add a review"
-msgstr ""
+msgstr "Skriv en recension"
 
 #: woocommerce/compatibility/2.4/single-product-reviews.php:60
 #: woocommerce/single-product-reviews.php:60
 msgid "Be the first to review"
-msgstr ""
+msgstr "Var först med att recensera"
 
 #: woocommerce/compatibility/2.4/single-product-reviews.php:61
 #: woocommerce/single-product-reviews.php:61
@@ -11282,7 +10821,7 @@ msgstr ""
 #: woocommerce/compatibility/2.4/single-product-reviews.php:76
 #: woocommerce/single-product-reviews.php:76
 msgid "You must be <a href=\"%s\">logged in</a> to post a review."
-msgstr ""
+msgstr "Du måste vara inloggad för att recensera"
 
 #: woocommerce/compatibility/2.4/single-product-reviews.php:80
 #: woocommerce/single-product-reviews.php:80
@@ -11322,7 +10861,7 @@ msgstr ""
 #: woocommerce/compatibility/2.4/single-product-reviews.php:90
 #: woocommerce/single-product-reviews.php:90
 msgid "Your Review"
-msgstr ""
+msgstr "Din recension"
 
 #: woocommerce/compatibility/2.4/single-product-reviews.php:99
 #: woocommerce/single-product-reviews.php:99
@@ -11477,3 +11016,463 @@ msgstr ""
 msgctxt "%2$s = plugin name in screen reader markup"
 msgid "Activate %2$s"
 msgstr ""
+
+#: framework/admin/functions/functions.options.php:5951
+#: framework/admin/functions/functions.options.php:6271
+msgid "Email Address"
+msgstr "E-postadress"
+
+#: framework/admin/functions/functions.options.php:6345
+msgid "Google Map Address"
+msgstr "Adress till Google Map"
+
+#: includes/class-fusion-widget-contact-info.php:95
+msgid "Address:"
+msgstr "Adress:"
+
+#: includes/woo-config.php:780
+msgid "Calculate Shipping"
+msgstr "Leverans"
+
+#: includes/woo-config.php:851
+msgid "Postcode / Zip"
+msgstr "Postnummer"
+
+#: includes/woo-config.php:859
+msgid "Update Totals"
+msgstr "Uppdatera totalpriset"
+
+#: includes/woo-config.php:884 includes/woo-config.php:950
+msgid "Have A Promotional Code?"
+msgstr "Har du rabattkod?"
+
+#: includes/woo-config.php:889
+msgid "Apply"
+msgstr "Skicka"
+
+#: includes/woo-config.php:979 includes/woo-config.php:1452
+#: woocommerce/compatibility/2.4/myaccount/form-edit-address.php:16
+#: woocommerce/myaccount/form-edit-address.php:16
+msgid "Billing Address"
+msgstr "Faktureringsadress"
+
+#: includes/woo-config.php:985 includes/woo-config.php:1472
+#: woocommerce/compatibility/2.4/myaccount/form-edit-address.php:16
+#: woocommerce/myaccount/form-edit-address.php:16
+msgid "Shipping Address"
+msgstr "Leveransadress"
+
+#: includes/woo-config.php:1285
+msgid "Email address"
+msgstr "E-postadress"
+
+#: woocommerce/compatibility/2.4/myaccount/form-edit-address.php:32
+#: woocommerce/myaccount/form-edit-address.php:32
+msgid ""
+"From your account dashboard you can view your recent orders, manage your "
+"shipping and billing addresses and <a href=\"%s\">edit your password and "
+"account details</a>."
+msgstr ""
+"Från ditt konto kan du bland annat se dina order och ändra dina uppgifter."
+
+#: woocommerce/compatibility/2.4/myaccount/form-edit-address.php:71
+#: woocommerce/myaccount/form-edit-address.php:71
+msgid "Save Address"
+msgstr "Spara adress"
+
+#: comments.php:53 contact.php:132
+msgid "Name (required)"
+msgstr "Namn (obligatoriskt)"
+
+#: comments.php:54 contact.php:134
+msgid "Email (required)"
+msgstr "E-post (obligatoriskt)"
+
+#: contact.php:87
+msgid "Name:"
+msgstr "Namn:"
+
+#: contact.php:89
+msgid "Subject:"
+msgstr "Ämne:"
+
+#: contact.php:136
+msgid "Subject"
+msgstr "Ämne"
+
+#: contact.php:142
+msgid "Message"
+msgstr "Meddelande"
+
+#: framework/admin/functions/functions.options.php:1703
+#: framework/metaboxes/tabs/tab_page.php:41
+#: framework/metaboxes/tabs/tab_pagetitlebar.php:20
+#: framework/metaboxes/tabs/tab_portfolio_page.php:52
+#: framework/metaboxes/tabs/tab_portfolio_post.php:141
+#: framework/metaboxes/tabs/tab_portfolio_post.php:152
+#: framework/metaboxes/tabs/tab_portfolio_post.php:163
+#: framework/metaboxes/tabs/tab_post.php:76
+#: framework/metaboxes/tabs/tab_post.php:87
+#: framework/metaboxes/tabs/tab_post.php:98
+#: framework/metaboxes/tabs/tab_post.php:109
+#: framework/metaboxes/tabs/tab_post.php:120
+#: framework/metaboxes/tabs/tab_post.php:131 includes/woo-config.php:343
+#: includes/woo-config.php:345 includes/woo-config.php:346
+#: includes/woo-config.php:347
+msgid "Show"
+msgstr "Visa"
+
+#: framework/admin/functions/functions.options.php:5785
+#: framework/admin/functions/functions.options.php:5849
+msgid "Pinterest"
+msgstr "Pinterest"
+
+#: includes/admin-screens/fusion-plugins.php:69
+#: includes/class-tgm-plugin-activation.php:2164
+msgid "Required"
+msgstr "Obligatoriskt"
+
+#: includes/avada-functions.php:391 includes/class-avada-scripts.php:272
+#: includes/woo-config.php:198
+msgid "Details"
+msgstr "Detaljer"
+
+#: includes/class-fusion-widget-tabs.php:149
+msgid "says:"
+msgstr "säger:"
+
+#: includes/class-fusion-widget-tabs.php:229
+msgid "Show recent posts"
+msgstr "Visa senaste inlägg"
+
+#: includes/class-fusion-widget-tabs.php:233
+msgid "Show comments"
+msgstr "Visa kommentarer"
+
+#: includes/class-fusion-widget-tweets.php:95
+msgid "Recent Tweets"
+msgstr "Senaste twitter"
+
+#: includes/class-fusion-widget-tweets.php:207
+msgid "Number of Tweet (max. 20 tweets possible):"
+msgstr "Antal twitter (max. 20 st.)"
+
+#: includes/class-fusion-widget-tweets.php:224
+msgid "Light"
+msgstr "Ljus"
+
+#: includes/class-fusion-widget-tweets.php:225
+msgid "Dark"
+msgstr "Mörk"
+
+#: includes/class-fusion-widget-tweets.php:235
+msgid "Border Color:"
+msgstr "Ramfärg:"
+
+#: includes/class-fusion-widget-tweets.php:241
+msgid "Show Header"
+msgstr "Visa header"
+
+#: includes/class-fusion-widget-tweets.php:246
+msgid "Show Footer"
+msgstr "Visa footer"
+
+#: includes/class-fusion-widget-tweets.php:251
+msgid "Show Borders"
+msgstr "Visa ram"
+
+#: includes/class-fusion-widget-tweets.php:256
+msgid "Transparent Background"
+msgstr "Genomskinlig bakgrund"
+
+#: includes/class-fusion-widget-tweets.php:582
+msgid "second"
+msgstr "sekund"
+
+#: includes/class-fusion-widget-tweets.php:582
+msgid "minute"
+msgstr "minut"
+
+#: includes/class-fusion-widget-tweets.php:582
+msgid "hour"
+msgstr "timme"
+
+#: includes/class-fusion-widget-tweets.php:582
+msgid "day"
+msgstr "dag"
+
+#: includes/class-fusion-widget-tweets.php:582
+msgid "week"
+msgstr "veckor"
+
+#: includes/class-fusion-widget-tweets.php:582
+msgid "month"
+msgstr "månad"
+
+#: includes/class-fusion-widget-tweets.php:582
+msgid "year"
+msgstr "år"
+
+#: includes/class-fusion-widget-tweets.php:583
+msgid "seconds"
+msgstr "sekunder"
+
+#: includes/class-fusion-widget-tweets.php:583
+msgid "minutes"
+msgstr "minuter"
+
+#: includes/class-fusion-widget-tweets.php:583
+#: tribe-events/pro/widgets/countdown-widget.php:25
+msgid "hours"
+msgstr "timmar"
+
+#: includes/class-fusion-widget-tweets.php:583
+#: tribe-events/pro/widgets/countdown-widget.php:21
+msgid "days"
+msgstr "dagar"
+
+#: includes/class-fusion-widget-tweets.php:583
+msgid "weeks"
+msgstr "veckor"
+
+#: includes/class-fusion-widget-tweets.php:583
+msgid "months"
+msgstr "månader"
+
+#: includes/class-fusion-widget-tweets.php:583
+msgid "years"
+msgstr "år"
+
+#: includes/class-fusion-widget-tweets.php:587
+msgid "ago"
+msgstr "sedan"
+
+#: includes/class-tgm-plugin-activation.php:2167
+msgid "Recommended"
+msgstr "Rekommenderad"
+
+#: includes/class-tgm-plugin-activation.php:2212
+msgid "Active"
+msgstr "Aktiv"
+
+#: includes/class-tgm-plugin-activation.php:2435
+msgid "Type"
+msgstr "Typ"
+
+#: includes/class-tgm-plugin-activation.php:2440
+msgid "Status"
+msgstr "Status"
+
+#: includes/class-tgm-plugin-activation.php:2606
+msgid "Update"
+msgstr "Updatera"
+
+#: includes/class-tgm-plugin-activation.php:2609
+msgid "Activate"
+msgstr "Aktivera"
+
+#: includes/class-tgm-plugin-activation.php:3338
+#: includes/class-tgm-plugin-activation.php:3344
+msgid "Show Details"
+msgstr "Visa detaljer"
+
+#: includes/class-tgm-plugin-activation.php:3338
+#: includes/class-tgm-plugin-activation.php:3344
+msgid "Hide Details"
+msgstr "Göm detaljer"
+
+#: includes/dynamic_css.php:8485
+msgid "Please enter correct details for this required field."
+msgstr "Var god fyll i korrekta uppgifter på det här obligatoriska fältet."
+
+#: includes/woo-config.php:145
+msgid "Out of Stock"
+msgstr "Slut på lager"
+
+#: includes/woo-config.php:227
+msgid "Search..."
+msgstr "Sök..."
+
+#: includes/woo-config.php:289 includes/woo-config.php:322
+msgid "Date"
+msgstr "Datum"
+
+#: includes/woo-config.php:292 includes/woo-config.php:321
+#: woocommerce/cart/cart.php:27 woocommerce/compatibility/2.4/cart/cart.php:27
+msgid "Price"
+msgstr "Pris"
+
+#: includes/woo-config.php:295 includes/woo-config.php:323
+msgid "Popularity"
+msgstr "Populäritet"
+
+#: includes/woo-config.php:298 includes/woo-config.php:324
+msgid "Rating"
+msgstr "Betyg"
+
+#: includes/woo-config.php:301 includes/woo-config.php:320
+#: woocommerce/compatibility/2.4/single-product-reviews.php:65
+#: woocommerce/single-product-reviews.php:65
+msgid "Name"
+msgstr "Namn"
+
+#: includes/woo-config.php:304 includes/woo-config.php:319
+msgid "Default Order"
+msgstr "Standard ordning"
+
+#: includes/woo-config.php:317 includes/woo-config.php:319
+#: includes/woo-config.php:320 includes/woo-config.php:321
+#: includes/woo-config.php:322 includes/woo-config.php:323
+#: includes/woo-config.php:324
+msgid "Sort by"
+msgstr "Sortera"
+
+#: includes/woo-config.php:343
+msgid " Products"
+msgstr "Produkter"
+
+#: includes/woo-config.php:345 includes/woo-config.php:346
+#: includes/woo-config.php:347
+msgid "Products"
+msgstr "Produkter"
+
+#: includes/woo-config.php:650
+msgid "Share On Facebook"
+msgstr "Dela på Facebook"
+
+#: includes/woo-config.php:656
+msgid "Tweet This Product"
+msgstr "Twittra om produkten"
+
+#: includes/woo-config.php:663
+msgid "Pin This Product"
+msgstr "Pinna produkten"
+
+#: includes/woo-config.php:669
+msgid "Mail This Product"
+msgstr "E-posta produkten"
+
+#: includes/woo-config.php:1332
+msgid "Order Details"
+msgstr "Orderdetaljer"
+
+#: includes/avada-functions.php:1217
+msgid "Password"
+msgstr "Lösenord"
+
+#: includes/woo-config.php:1239
+msgid "View Orders"
+msgstr "Dina order"
+
+#: includes/woo-config.php:1290
+msgid "Current Password (leave blank to leave unchanged)"
+msgstr "Nuvarande lösenord (lämna blankt för att behålla nuvarande lösenord)"
+
+#: includes/woo-config.php:1295
+msgid "New Password (leave blank to leave unchanged)"
+msgstr "Nytt lösenord (lämna blankt för att behålla nuvarande lösenord)"
+
+#: includes/woo-config.php:1300
+msgid "Confirm New Password"
+msgstr "Bekräfta nytt lösenord"
+
+#: includes/avada-functions.php:1271
+msgid "Item(s)"
+msgstr "st"
+
+#: includes/avada-functions.php:1301
+msgid "Checkout"
+msgstr "Kassa"
+
+#: woocommerce/cart/cart.php:132
+#: woocommerce/compatibility/2.4/cart/cart.php:132
+msgid "Proceed to Checkout"
+msgstr "Vidare till kassan"
+
+#: templates/blog-layout.php:219
+msgid "0"
+msgstr "0"
+
+#: templates/blog-layout.php:219
+msgid "1"
+msgstr "1"
+
+#: 404.php:19 search.php:49
+msgid "Here are some useful links:"
+msgstr "Bra länkar:"
+
+#: 404.php:32
+msgid "Search Our Website"
+msgstr "Sök"
+
+#: 404.php:33
+msgid "Can't find what you need? Take a moment and do a search below!"
+msgstr "Hittar du inte vad du letar efter? Gör en ny sökning nedan."
+
+#: 404.php:38 search.php:23 searchform.php:4
+msgid "Search ..."
+msgstr "Sök ..."
+
+#: bbpress/form-search.php:14 includes/class-avada-layout-bbpress.php:125
+msgid "Search for:"
+msgstr "Sök efter:"
+
+#: bbpress/form-search.php:17 includes/class-avada-layout-bbpress.php:128
+msgid "Search the Forum..."
+msgstr "Sök forumet..."
+
+#: bbpress/loop-search-reply.php:38
+msgid "In reply to: "
+msgstr "Svar på:"
+
+#: bbpress/loop-search-topic.php:44
+msgid "Topic: "
+msgstr "Ämne:"
+
+#: includes/avada-functions.php:372 includes/avada-functions.php:374
+#: includes/avada-functions.php:1300 includes/woo-config.php:1190
+msgid "View Cart"
+msgstr "Kundvagn"
+
+#: includes/avada-functions.php:1273
+msgid "Cart"
+msgstr "Kundvagn"
+
+#: includes/class-avada-scripts.php:263
+msgid "Shopping Cart"
+msgstr "Kundvagn"
+
+#: includes/woo-config.php:743
+msgid "You Have %d Item In Your Cart"
+msgstr "Du har %d vara i kundvagnen."
+
+#: includes/woo-config.php:745
+msgid "You Have %d Items In Your Cart"
+msgstr "Du har %d varor i kundvagnen."
+
+#: includes/woo-config.php:1171 includes/woo-config.php:1173
+msgid "Hello"
+msgstr "Hej"
+
+#: includes/woo-config.php:1247
+msgid "Change Address"
+msgstr "Ändra adress"
+
+#: woocommerce/cart/cart.php:131
+#: woocommerce/compatibility/2.4/cart/cart.php:131
+msgid "Update Cart"
+msgstr "Uppdatera kundvagn"
+
+#: woocommerce/compatibility/2.4/myaccount/form-edit-address.php:27
+#: woocommerce/myaccount/form-edit-address.php:27
+msgid "Hello <strong>%1$s</strong> (not %1$s? <a href=\"%2$s\">Sign out</a>)."
+msgstr ""
+"Hej <strong>%1$s</strong> (är du inte %1$s? <a href=\"%2$s\">Logga ut</a>)."
+
+#: 404.php:7
+msgid "Oops, This Page Could Not Be Found!"
+msgstr "Den här sidan finns inte!"
+
+#: includes/woo-config.php:1252 includes/woo-config.php:1271
+msgid "Edit Account"
+msgstr "Redigera Konto"
