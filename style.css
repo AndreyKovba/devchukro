@@ -95,3 +95,7 @@
 .product a.button-center:hover {
     background: #c93f35;
 }
+
+.product-buttons{
+    display: none;
+}

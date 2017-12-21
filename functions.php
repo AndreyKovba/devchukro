@@ -4,7 +4,7 @@ function my_theme_enqueue_styles() {
     $parent_style = 'parent-style';
     wp_enqueue_style( $parent_style, get_template_directory_uri() . '/style.css?v=1312171' );
     wp_enqueue_style( 'child-style',
-        get_stylesheet_directory_uri() . '/style.css?v=2012173',
+        get_stylesheet_directory_uri() . '/style.css?v=211217',
         array( $parent_style ),
         wp_get_theme()->get('Version')
     );
@@ -16,18 +16,17 @@ function child_theme_translation() {
 }
 add_action( 'after_setup_theme', 'child_theme_translation' );
 
-add_filter('woocommerce_add_to_cart_redirect', 'themeprefix_add_to_cart_redirect');
-function themeprefix_add_to_cart_redirect() {
-    if(!isset($_GET['buy'])) {
-        return;
-    }
-    global $woocommerce;
-    $checkout_url = wc_get_checkout_url();
-    return $checkout_url;
-}
+//add_filter('woocommerce_add_to_cart_redirect', 'themeprefix_add_to_cart_redirect');
+//function themeprefix_add_to_cart_redirect() {
+//    if(!isset($_GET['buy'])) {
+//        return;
+//    }
+//    global $woocommerce;
+//    $checkout_url = wc_get_checkout_url();
+//    return $checkout_url;
+//}
 
 add_action( 'woocommerce_after_shop_loop_item', 'avada_woocommerce_buy_button', 110 );
-
 function avada_woocommerce_buy_button( $args = array() ) {
     global $product;
 
