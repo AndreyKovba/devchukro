@@ -85,12 +85,13 @@
 
 .product a.button-center {
     display: block;
-    color: #e67fb9;
+    background: #d93010;
+    color: white;
+    font-weigh: bold;
     padding: 7px 0px;
     text-align: center;
     font-size: 16px;
 }
 .product a.button-center:hover {
-    background: #e95f55;
-    color: white;
+    background: #c93f35;
 }

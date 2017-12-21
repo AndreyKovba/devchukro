@@ -4,7 +4,7 @@ function my_theme_enqueue_styles() {
     $parent_style = 'parent-style';
     wp_enqueue_style( $parent_style, get_template_directory_uri() . '/style.css?v=1312171' );
     wp_enqueue_style( 'child-style',
-        get_stylesheet_directory_uri() . '/style.css?v=2012172',
+        get_stylesheet_directory_uri() . '/style.css?v=2012173',
         array( $parent_style ),
         wp_get_theme()->get('Version')
     );
@@ -143,4 +143,23 @@ function avada_child_after_main_container() {
         });
     </script>
     <?php
+}
+
+add_filter( 'woocommerce_get_price_html', 'wpa83367_price_html', 100, 2 );
+function wpa83367_price_html( $price, $product ){
+    $dom = new DOMDocument();
+    $dom->loadHTML($price);
+    $elem = $dom->getElementsByTagName('span')->item(0);
+    preg_match('/\.*(\d+)\.*/', $elem->nodeValue, $matches);
+    $digits = str_split($matches[1]);
+    $priceFormatted = '';
+    $lastDigitIndex = count($digits) - 1;
+    for($i=0; $i<=$lastDigitIndex; $i++){
+        $priceFormatted = $digits[$lastDigitIndex - $i] . $priceFormatted;
+        if( $i%3 == 2){
+            $priceFormatted = ' ' . $priceFormatted;
+        }
+    }
+    $elem->nodeValue = preg_replace('/\.*(\d+)\.*/', $priceFormatted, $elem->nodeValue);
+    return $dom->saveHTML();
 }
