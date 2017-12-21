@@ -13,6 +13,21 @@
     height: 60px;
 }
 
+#wrapper .product-details{
+    padding-top: 0px;
+}
+
+#wrapper .product-details .product-title {
+    height: 40px;
+    line-height: 20px;
+}
+#wrapper .products-2 .product-title {
+    height: 20px;
+}
+
+#wrapper .product .product-details-container{
+    padding-bottom: 6px;
+}
 #wrapper .product .product-details-container .clearfix{
     height: 30px;
 }
@@ -23,6 +38,12 @@
         display: inline-block;
         float: none !important;
         vertical-align: top;
+    }
+    #wrapper .product-details .product-title {
+        height: 60px;
+    }
+    #wrapper .products-2 .product-title {
+        height: 40px;
     }
 }
 
@@ -98,4 +119,9 @@
 
 .product-buttons{
     display: none;
+}
+
+#wrapper .product .featured-image{
+    line-height: 171px;
+    min-height: 171px;
 }
