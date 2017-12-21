@@ -108,7 +108,7 @@
     display: block;
     background: #d93010;
     color: white;
-    font-weigh: bold;
+    font-weight: bold;
     padding: 7px 0px;
     text-align: center;
     font-size: 16px;
@@ -124,4 +124,17 @@
 #wrapper .product .featured-image{
     line-height: 171px;
     min-height: 171px;
+}
+
+/****** color fixes *********/
+#wrapper .price > .amount{
+    color: #2b2e32;
+}
+/****** color fixes over ****/
+#wrapper .fusion-main-menu > ul > li > a,
+#wrapper .fusion-main-menu .sub-menu li a,
+#wrapper .fusion-mobile-nav-item a,
+#wrapper .fusion-secondary-menu > ul > li > a
+{
+    font-weight: bold;
 }
