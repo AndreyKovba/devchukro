@@ -130,6 +130,35 @@
 #wrapper .price > .amount{
     color: #2b2e32;
 }
+
+#wrapper .catalog-ordering .order li a,
+#wrapper .order-dropdown .current-li, .order-dropdown ul li a,
+#wrapper .fusion-grid-list-view li.active-view,
+#wrapper .fusion-grid-list-view li,
+#wrapper .fusion-grid-list-view li a:hover
+{
+    background: #fee7e2;
+    border-color: black;
+}
+#wrapper .order-dropdown > li:after,
+#wrapper .fusion-grid-list-view
+{
+    border-color: black;
+    color: black;
+}
+#wrapper .woocommerce-tabs > .tabs .active a{
+    background: #fee7e2;
+}
+
+#wrapper .quantity .minus,
+#wrapper .quantity .plus{
+    background: #fee7e2;
+}
+#wrapper .quantity .minus:hover,
+#wrapper .quantity .plus:hover{
+    background: #f9e0e0;
+}
+
 /****** color fixes over ****/
 #wrapper .fusion-main-menu > ul > li > a,
 #wrapper .fusion-main-menu .sub-menu li a,
