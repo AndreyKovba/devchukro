@@ -162,3 +162,39 @@ function wpa83367_price_html( $price, $product ){
     $elem->nodeValue = preg_replace('/\.*(\d+)\.*/', $priceFormatted, $elem->nodeValue);
     return $dom->saveHTML();
 }
+
+function iphoneMouseEnterFix() {
+    ?>
+    <script>
+        jQuery( document ).ready( function() {
+            var clicked = false;
+
+            jQuery('li.product').on( 'click', '.add_to_cart_button', function(e){
+                clicked = true;
+            });
+
+            function waitForClick(iterationsLeft, callback) {
+                if(iterationsLeft>0 && !clicked){
+                    setTimeout( function(){waitForClick(iterationsLeft - 1, callback)}, 100);
+                }
+                else{
+                    console.log(iterationsLeft);
+                    callback();
+                }
+
+            }
+            jQuery('li.product').on( 'touchstart', '.add_to_cart_button', function(e){
+                clicked = false;
+                var self = this;
+                waitForClick(10, function() {
+                    if (!clicked) {
+                        jQuery(self).click();
+                    }
+                });
+            });
+
+        });
+    </script>
+    <?php
+}
+add_action('wp_head', 'iphoneMouseEnterFix');
