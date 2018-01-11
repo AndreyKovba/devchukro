@@ -167,3 +167,12 @@
 {
     font-weight: bold;
 }
+
+#wrapper .product .crossfade-images{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: auto !important;
+}
+#wrapper .product .crossfade-images>img{
+    height: 280px;
+}
