@@ -198,3 +198,37 @@ function iphoneMouseEnterFix() {
     <?php
 }
 add_action('wp_head', 'iphoneMouseEnterFix');
+
+add_action('admin_head', 'admin_custom_styles');
+function admin_custom_styles() {
+    ?>
+    <style>
+        .avadaredux-container #avadaredux-form-wrapper .form-table td>fieldset{
+            position: relative;
+        }
+        .avadaredux-container #avadaredux-form-wrapper .avadaredux-main .wp-picker-container>a{
+            display: inline-block;
+            width: 100%;
+            min-height: 50px;
+            /*top: calc(50% - 25px) !important;*/
+            top: 0px;
+            position: absolute;
+        }
+        .avadaredux-container #avadaredux-form-wrapper .avadaredux-main .wp-picker-container>a>span{
+            height: 50px !important;
+            /*top: calc(50% - 25px) !important;*/
+            top: 0px;
+        }
+        #wpbody .avadaredux-container #avadaredux-form-wrapper .avadaredux-main .avadaredux-container-color .iris-picker{
+            margin-top: 35px;
+        }
+        #wpbody .avadaredux-container #avadaredux-form-wrapper .avadaredux-main .avadaredux-container-color_alpha .iris-picker{
+            margin-top: 35px;
+            width: 100% !important;
+        }
+        #wpbody .avadaredux-container #avadaredux-form-wrapper .form-table .avadaredux-field-container{
+            margin: 25px 0px;
+        }
+    </style>
+    <?php
+}
