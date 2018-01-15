@@ -18,8 +18,10 @@
 }
 
 #wrapper .product-details .product-title {
+    margin-top: 15px;
     height: 40px;
     line-height: 20px;
+    overflow: hidden;
 }
 #wrapper .products-2 .product-title {
     height: 20px;
@@ -126,6 +128,12 @@
 {
     line-height: 171px;
     min-height: 171px;
+    display: inline-block;
+}
+#wrapper .product .featured-image img,
+#wrapper .product .crossfade-images img
+{
+    vertical-align: bottom;
 }
 
 /****** color fixes *********/
@@ -169,17 +177,18 @@
 {
     font-weight: bold;
 }
-
-#wrapper .product .crossfade-images{
+#wrapper .product .featured-image,
+#wrapper .product .crossfade-images {
     margin-top: 10px;
     margin-bottom: 10px;
+}
+#wrapper .product .crossfade-images{
     height: auto !important;
     background: none;
 }
 #wrapper .product .crossfade-images>img{
     max-height: 280px;
     margin-top: 0px;
-    vertical-align: top;
 }
 
 #wrapper #main{
