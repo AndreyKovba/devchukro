@@ -126,6 +126,7 @@
 #wrapper .product .featured-image,
 #wrapper .product .crossfade-images
 {
+    max-width: 100%;
     line-height: 171px;
     min-height: 171px;
     display: inline-block;
