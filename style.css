@@ -214,3 +214,7 @@ li.product.product-list-view .buy-button-clearfix{
 #wrapper .product-images .crossfade-images:hover .hover-image {
     display: inline-block;
 }
+/***********************/
+#wrapper .fusion-main-menu > ul > li > a:hover{
+    border-color: transparent;
+}
