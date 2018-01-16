@@ -4,7 +4,7 @@ function my_theme_enqueue_styles() {
     $parent_style = 'parent-style';
     wp_enqueue_style( $parent_style, get_template_directory_uri() . '/style.css?v=150118' );
     wp_enqueue_style( 'child-style',
-        get_stylesheet_directory_uri() . '/style.css?v=160118',
+        get_stylesheet_directory_uri() . '/style.css?v=1601181',
         array( $parent_style ),
         wp_get_theme()->get('Version')
     );
@@ -44,7 +44,7 @@ function avada_woocommerce_buy_button( $args = array() ) {
         );
         $args = apply_filters( 'woocommerce_loop_add_to_cart_args', wp_parse_args( $args, $defaults ), $product );
         ?>
-        <div class="clearfix">
+        <div class="clearfix buy-button-clearfix">
             <?php drawBuyButton($args); ?>
         </div>
         <?php

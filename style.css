@@ -98,6 +98,14 @@
     z-index: 20;
 }
 
+
+li.product.product-list-view .buy-button-clearfix{
+    float: right;
+    width: 73%;
+    /*margin-left: 2%;*/
+    margin-top: 40px;
+}
+
 .product-buttons a.button-left:last-child {
     float: left;
 }
