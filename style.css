@@ -243,3 +243,13 @@ li.product.product-list-view .buy-button-clearfix{
         display: block;
     }
 }
+
+@media only screen and (max-width: 1000px) {
+    #wrapper .fusion-header-wrapper>div {
+        position: fixed;
+        left: 0px;
+        width: 100%;
+        max-height: 100%;
+        overflow-y: auto;
+    }
+}

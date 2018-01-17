@@ -4,7 +4,7 @@ function my_theme_enqueue_styles() {
     $parent_style = 'parent-style';
     wp_enqueue_style( $parent_style, get_template_directory_uri() . '/style.css?v=150118' );
     wp_enqueue_style( 'child-style',
-        get_stylesheet_directory_uri() . '/style.css?v=170118',
+        get_stylesheet_directory_uri() . '/style.css?v=1701181',
         array( $parent_style ),
         wp_get_theme()->get('Version')
     );
@@ -219,6 +219,18 @@ function showFiltersClick() {
                 }
             });
         });
+    </script>
+    <?php
+}
+
+add_action('wp_head', 'fixWpAdminBar');
+function fixWpAdminBar(){
+    ?>
+    <script>
+    jQuery( document ).ready( function() {
+        var height = jQuery('#wpadminbar').height();
+        jQuery('#wrapper .fusion-header-wrapper>div').css('max-height', 'calc(100% - ' + height + 'px)');
+    });
     </script>
     <?php
 }
