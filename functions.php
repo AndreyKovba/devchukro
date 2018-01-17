@@ -4,7 +4,7 @@ function my_theme_enqueue_styles() {
     $parent_style = 'parent-style';
     wp_enqueue_style( $parent_style, get_template_directory_uri() . '/style.css?v=150118' );
     wp_enqueue_style( 'child-style',
-        get_stylesheet_directory_uri() . '/style.css?v=1701181',
+        get_stylesheet_directory_uri() . '/style.css?v=1701182',
         array( $parent_style ),
         wp_get_theme()->get('Version')
     );
@@ -178,7 +178,6 @@ function iphoneMouseEnterFix() {
                     setTimeout( function(){waitForClick(iterationsLeft - 1, callback)}, 100);
                 }
                 else{
-                    console.log(iterationsLeft);
                     callback();
                 }
 
@@ -228,8 +227,57 @@ function fixWpAdminBar(){
     ?>
     <script>
     jQuery( document ).ready( function() {
-        var height = jQuery('#wpadminbar').height();
-        jQuery('#wrapper .fusion-header-wrapper>div').css('max-height', 'calc(100% - ' + height + 'px)');
+        var wpAdminBar = jQuery('#wpadminbar');
+        var fusionHeaderWrapper = jQuery('#wrapper .fusion-header-wrapper');
+        var secondaryHeader = fusionHeaderWrapper.find('.fusion-secondary-header');
+        var header = fusionHeaderWrapper.find('.fusion-header');
+        var countWaitingForResize = 0;
+        var fixNumber = 0;
+
+        function checkFix(element, expectedTop, iterationsLeft, myFixNumber){
+            setTimeout(function () {
+                if(countWaitingForResize == 0 && myFixNumber == fixNumber ) {
+                    if (parseInt(element.css('top')) != expectedTop) {
+                        fixTopPositions();
+                    }
+                    else {
+                        if (iterationsLeft > 0) {
+                            checkFix(element, expectedTop, iterationsLeft - 1);
+                        }
+                    }
+                }
+            }, 100);
+        }
+
+        function fixTopPositions(){
+            fixNumber++;
+            var secondaryHeaderTop = wpAdminBar.outerHeight() * 1;
+            var headerTop = secondaryHeaderTop + secondaryHeader.outerHeight();
+            secondaryHeader.css('top', secondaryHeaderTop + 'px');
+            header.css('top', headerTop + 'px');
+            header.css('max-height', 'calc(100% - ' + headerTop + 'px)');
+            fusionHeaderWrapper.css(
+                'min-height',
+                ( headerTop + header.outerHeight() - secondaryHeaderTop - jQuery('.fusion-mobile-nav-holder:visible').height()*1 ) + 'px'
+            );
+            checkFix(header, headerTop, 10, fixNumber);
+        }
+
+        if(jQuery('body').width() <= 1000) {
+            fixTopPositions();
+        }
+
+        jQuery( window ).resize(function() {
+            if(jQuery('body').width() <= 1000) {
+                countWaitingForResize++;
+                setTimeout(function () {
+                    countWaitingForResize--;
+                    if(countWaitingForResize==0) {
+                        fixTopPositions();
+                    }
+                }, 200);
+            }
+        });
     });
     </script>
     <?php

@@ -244,11 +244,31 @@ li.product.product-list-view .buy-button-clearfix{
     }
 }
 
+@media only screen and (min-width: 1000px) {
+    #wrapper .fusion-header-wrapper{
+        color: red;
+        min-height: 50px !important;
+    }
+    #wrapper .fusion-header-wrapper .fusion-secondary-header,
+    #wrapper .fusion-header-wrapper .fusion-header{
+        max-height: initial !important;
+    }
+    #wrapper .fusion-header-wrapper .fusion-secondary-header{
+        top: auto !important;
+    }
+}
+
 @media only screen and (max-width: 1000px) {
-    #wrapper .fusion-header-wrapper>div {
+    #wrapper .fusion-header-wrapper .fusion-secondary-header{
+        z-index: 10;
+    }
+    #wrapper .fusion-header-wrapper .fusion-secondary-header,
+    #wrapper .fusion-header-wrapper .fusion-header{
         position: fixed;
         left: 0px;
         width: 100%;
+    }
+    #wrapper .fusion-header-wrapper .fusion-header{
         max-height: 100%;
         overflow-y: auto;
     }
