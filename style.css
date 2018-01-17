@@ -165,6 +165,11 @@ li.product.product-list-view .buy-button-clearfix{
     border-color: black;
     color: black;
 }
+@media only screen and (max-width: 800px) {
+    #wrapper .order-dropdown .current-li-content {
+        max-height: 39px;
+    }
+}
 #wrapper .woocommerce-tabs > .tabs .active a{
     background: #fee7e2;
 }
@@ -217,4 +222,24 @@ li.product.product-list-view .buy-button-clearfix{
 /***********************/
 #wrapper .fusion-main-menu > ul > li > a:hover{
     border-color: transparent;
+}
+
+.show-filters-block{
+    display: none;
+}
+@media only screen and (max-width: 800px){
+    .show-filters-block{
+        display: block;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    .show-filters-block.opened{
+        margin-bottom: 5px;
+    }
+    .catalog-ordering{
+        display: none;
+    }
+    .catalog-ordering.opened{
+        display: block;
+    }
 }

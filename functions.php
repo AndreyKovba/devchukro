@@ -4,7 +4,7 @@ function my_theme_enqueue_styles() {
     $parent_style = 'parent-style';
     wp_enqueue_style( $parent_style, get_template_directory_uri() . '/style.css?v=150118' );
     wp_enqueue_style( 'child-style',
-        get_stylesheet_directory_uri() . '/style.css?v=1601182',
+        get_stylesheet_directory_uri() . '/style.css?v=170118',
         array( $parent_style ),
         wp_get_theme()->get('Version')
     );
@@ -16,15 +16,14 @@ function child_theme_translation() {
 }
 add_action( 'after_setup_theme', 'child_theme_translation' );
 
-//add_filter('woocommerce_add_to_cart_redirect', 'themeprefix_add_to_cart_redirect');
-//function themeprefix_add_to_cart_redirect() {
-//    if(!isset($_GET['buy'])) {
-//        return;
-//    }
-//    global $woocommerce;
-//    $checkout_url = wc_get_checkout_url();
-//    return $checkout_url;
-//}
+add_action( 'woocommerce_before_shop_loop', 'add_before_catalog_ordering', 30 );
+function add_before_catalog_ordering(){
+    ?>
+    <div class="show-filters-block">
+        <a href="#" class="show-filters-block-button">Filtrering</a>
+    </div>
+    <?php
+}
 
 add_action( 'woocommerce_after_shop_loop_item', 'avada_woocommerce_buy_button', 110 );
 function avada_woocommerce_buy_button( $args = array() ) {
@@ -163,6 +162,7 @@ function wpa83367_price_html( $price, $product ){
     return $dom->saveHTML();
 }
 
+add_action('wp_head', 'iphoneMouseEnterFix');
 function iphoneMouseEnterFix() {
     ?>
     <script>
@@ -197,7 +197,31 @@ function iphoneMouseEnterFix() {
     </script>
     <?php
 }
-add_action('wp_head', 'iphoneMouseEnterFix');
+
+add_action('wp_head', 'showFiltersClick');
+function showFiltersClick() {
+    ?>
+    <script>
+        jQuery( document ).ready( function() {
+            var isCatalogOrderingVisible = false;
+            jQuery(document).on('click', '.show-filters-block-button', function(event){
+                event.preventDefault();
+                var parent = jQuery(this).parent();
+                if(!isCatalogOrderingVisible) {
+                    jQuery('.catalog-ordering').addClass("opened");
+                    parent.addClass("opened");
+                    isCatalogOrderingVisible = true;
+                }
+                else{
+                    jQuery('.catalog-ordering').removeClass("opened");
+                    parent.removeClass("opened");
+                    isCatalogOrderingVisible = false;
+                }
+            });
+        });
+    </script>
+    <?php
+}
 
 add_action('admin_head', 'admin_custom_styles');
 function admin_custom_styles() {
