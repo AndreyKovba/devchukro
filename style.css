@@ -271,5 +271,6 @@ li.product.product-list-view .buy-button-clearfix{
     #wrapper .fusion-header-wrapper .fusion-header{
         max-height: 100%;
         overflow-y: auto;
+        top: 56px;
     }
 }

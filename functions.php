@@ -4,7 +4,7 @@ function my_theme_enqueue_styles() {
     $parent_style = 'parent-style';
     wp_enqueue_style( $parent_style, get_template_directory_uri() . '/style.css?v=150118' );
     wp_enqueue_style( 'child-style',
-        get_stylesheet_directory_uri() . '/style.css?v=1701182',
+        get_stylesheet_directory_uri() . '/style.css?v=1701184',
         array( $parent_style ),
         wp_get_theme()->get('Version')
     );
@@ -235,9 +235,9 @@ function fixWpAdminBar(){
         var fixNumber = 0;
 
         function checkFix(element, expectedTop, iterationsLeft, myFixNumber){
-            setTimeout(function () {
+            jQuery.data(this, 'checkFixTimer', setTimeout(function () {
                 if(countWaitingForResize == 0 && myFixNumber == fixNumber ) {
-                    if (parseInt(element.css('top')) != expectedTop) {
+                    if (expectedTop!=0 && parseInt(element.css('top')) != expectedTop) {
                         fixTopPositions();
                     }
                     else {
@@ -246,21 +246,23 @@ function fixWpAdminBar(){
                         }
                     }
                 }
-            }, 100);
+            }, 50));
         }
 
         function fixTopPositions(){
             fixNumber++;
             var secondaryHeaderTop = wpAdminBar.outerHeight() * 1;
             var headerTop = secondaryHeaderTop + secondaryHeader.outerHeight();
-            secondaryHeader.css('top', secondaryHeaderTop + 'px');
-            header.css('top', headerTop + 'px');
-            header.css('max-height', 'calc(100% - ' + headerTop + 'px)');
-            fusionHeaderWrapper.css(
-                'min-height',
-                ( headerTop + header.outerHeight() - secondaryHeaderTop - jQuery('.fusion-mobile-nav-holder:visible').height()*1 ) + 'px'
-            );
-            checkFix(header, headerTop, 10, fixNumber);
+            if(headerTop>0) {
+                secondaryHeader.css('top', secondaryHeaderTop + 'px');
+                header.css('top', headerTop + 'px', 'important');
+                header.css('max-height', 'calc(100% - ' + headerTop + 'px)', 'important');
+                fusionHeaderWrapper.css(
+                    'min-height',
+                    ( headerTop + header.outerHeight() - secondaryHeaderTop - jQuery('.fusion-mobile-nav-holder:visible').height() * 1 ) + 'px'
+                );
+                checkFix(header, headerTop, 20, fixNumber);
+            }
         }
 
         if(jQuery('body').width() <= 1000) {
@@ -269,13 +271,22 @@ function fixWpAdminBar(){
 
         jQuery( window ).resize(function() {
             if(jQuery('body').width() <= 1000) {
-                countWaitingForResize++;
-                setTimeout(function () {
-                    countWaitingForResize--;
-                    if(countWaitingForResize==0) {
-                        fixTopPositions();
-                    }
-                }, 200);
+                clearTimeout(jQuery.data(this, 'resizeTimer'));
+                clearTimeout(jQuery.data(this, 'checkFixTimer'));
+                jQuery.data(this, 'resizeTimer', setTimeout(function() {
+                    fixTopPositions();
+                }, 200));
+            }
+        });
+
+
+        jQuery(window).scroll(function() {
+            if(jQuery('body').width() <= 1000) {
+                clearTimeout(jQuery.data(this, 'scrollTimer'));
+                clearTimeout(jQuery.data(this, 'checkFixTimer'));
+                jQuery.data(this, 'scrollTimer', setTimeout(function () {
+                    fixTopPositions();
+                }, 50));
             }
         });
     });
@@ -294,13 +305,11 @@ function admin_custom_styles() {
             display: inline-block;
             width: 100%;
             min-height: 50px;
-            /*top: calc(50% - 25px) !important;*/
             top: 0px;
             position: absolute;
         }
         .avadaredux-container #avadaredux-form-wrapper .avadaredux-main .wp-picker-container>a>span{
             height: 50px !important;
-            /*top: calc(50% - 25px) !important;*/
             top: 0px;
         }
         #wpbody .avadaredux-container #avadaredux-form-wrapper .avadaredux-main .avadaredux-container-color .iris-picker{
