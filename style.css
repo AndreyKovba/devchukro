@@ -230,8 +230,8 @@ li.product.product-list-view .buy-button-clearfix{
 @media only screen and (max-width: 800px){
     .show-filters-block{
         display: block;
-        text-align: center;
-        margin-bottom: 30px;
+        text-align: right;
+        margin-top: -20px;
     }
     .show-filters-block.opened{
         margin-bottom: 5px;
@@ -241,6 +241,9 @@ li.product.product-list-view .buy-button-clearfix{
     }
     .catalog-ordering.opened{
         display: block;
+    }
+    #wrapper .catalog-ordering.opened{
+        margin-bottom: 0px;
     }
 }
 
