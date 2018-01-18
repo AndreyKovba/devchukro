@@ -145,6 +145,13 @@ li.product.product-list-view .buy-button-clearfix{
     vertical-align: bottom;
 }
 
+@media only screen and (max-width: 410px) {
+    #wrapper .product .featured-image,
+    #wrapper .product .crossfade-images {
+        line-height: 100px;
+        min-height: 100px;
+    }
+}
 /****** color fixes *********/
 #wrapper .price > .amount{
     color: #2b2e32;
