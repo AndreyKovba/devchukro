@@ -4,7 +4,7 @@ function my_theme_enqueue_styles() {
     $parent_style = 'parent-style';
     wp_enqueue_style( $parent_style, get_template_directory_uri() . '/style.css?v=150118' );
     wp_enqueue_style( 'child-style',
-        get_stylesheet_directory_uri() . '/style.css?v=180118',
+        get_stylesheet_directory_uri() . '/style.css?v=1801182',
         array( $parent_style ),
         wp_get_theme()->get('Version')
     );
@@ -75,6 +75,70 @@ function avada_child_after_main_container() {
     ?>
     <script>
         jQuery(document).ready(function () {
+            /*********fixWpAdminBar*************/
+            var wpAdminBar = jQuery('#wpadminbar');
+            var fusionHeaderWrapper = jQuery('#wrapper .fusion-header-wrapper');
+            var secondaryHeader = fusionHeaderWrapper.find('.fusion-secondary-header');
+            var header = fusionHeaderWrapper.find('.fusion-header');
+            var countWaitingForResize = 0;
+            var fixNumber = 0;
+
+            function checkFix(element, expectedTop, iterationsLeft, myFixNumber){
+                jQuery.data(this, 'checkFixTimer', setTimeout(function () {
+                    if(countWaitingForResize == 0 && myFixNumber == fixNumber ) {
+                        if (expectedTop!=0 && parseInt(element.css('top')) != expectedTop) {
+                            fixTopPositions();
+                        }
+                        else {
+                            if (iterationsLeft > 0) {
+                                checkFix(element, expectedTop, iterationsLeft - 1);
+                            }
+                        }
+                    }
+                }, 50));
+            }
+
+            function fixTopPositions(){
+                fixNumber++;
+                var secondaryHeaderTop = wpAdminBar.outerHeight() * 1;
+                var headerTop = secondaryHeaderTop + secondaryHeader.outerHeight();
+                if(headerTop>0) {
+                    secondaryHeader.css('top', secondaryHeaderTop + 'px');
+                    header.css('top', headerTop + 'px', 'important');
+                    header.css('max-height', 'calc(100% - ' + headerTop + 'px)', 'important');
+                    fusionHeaderWrapper.css(
+                        'min-height',
+                        ( headerTop + header.outerHeight() - secondaryHeaderTop - jQuery('.fusion-mobile-nav-holder:visible').height() * 1 ) + 'px'
+                    );
+                    checkFix(header, headerTop, 20, fixNumber);
+                }
+            }
+
+            if(jQuery('body').width() <= 1000) {
+                fixTopPositions();
+            }
+
+            jQuery( window ).resize(function() {
+                if(jQuery('body').width() <= 1000) {
+                    clearTimeout(jQuery.data(this, 'resizeTimer'));
+                    clearTimeout(jQuery.data(this, 'checkFixTimer'));
+                    jQuery.data(this, 'resizeTimer', setTimeout(function() {
+                        fixTopPositions();
+                    }, 200));
+                }
+            });
+
+            jQuery(window).scroll(function() {
+                if(jQuery('body').width() <= 1000) {
+                    clearTimeout(jQuery.data(this, 'scrollTimer'));
+                    clearTimeout(jQuery.data(this, 'checkFixTimer'));
+                    jQuery.data(this, 'scrollTimer', setTimeout(function () {
+                        fixTopPositions();
+                    }, 50));
+                }
+            });
+            /**********fixWpAdminBar end****************/
+
             function isSmallScreen() {
                 return jQuery(window).width() * 1 <= 600
             }
@@ -114,33 +178,41 @@ function avada_child_after_main_container() {
 
             jQuery(document).on('click', pattern, function(event){
                 event.preventDefault();
+                var fusionHeaderWrapper = jQuery(this).closest('.fusion-header-wrapper');
+                fusionHeaderWrapper.addClass('with-search');
                 var parent = jQuery(this).parent();
                 if( isSmallScreen() ){
-                    parent.parent().find('.search-out-menu').fadeIn(500);
+                    parent.parent().find('.search-out-menu').fadeIn(500, fixTopPositions);
                 }
                 else{
                     jQuery(this).hide();
-                    parent.find('.search-in-menu').fadeIn(500);
+                    parent.find('.search-in-menu').fadeIn(500, fixTopPositions);
                 }
                 parent.find('.search-in-menu-overlay').show();
                 isSearchOpen = true;
+                fixTopPositions();
             });
 
             jQuery(document).on('click', '.search-in-menu-overlay', function(event){
                 event.preventDefault();
+                var fusionHeaderWrapper = jQuery(this).closest('.fusion-header-wrapper');
+                fusionHeaderWrapper.removeClass('with-search');
                 var parent = jQuery(this).parent();
                 parent.find('.search-in-menu-overlay').hide();
                 if( isSmallScreen() ){
                     parent.parent().find('.search-out-menu').fadeOut(300, function () {
                         parent.find('a[href="#search-in-menu"]').show();
+                        fixTopPositions();
                     });
                 }
                 else {
                     parent.find('.search-in-menu').fadeOut(300, function () {
                         parent.find('a[href="#search-in-menu"]').show();
+                        fixTopPositions();
                     });
                 }
                 isSearchOpen = false;
+                fixTopPositions();
             });
         });
     </script>
@@ -222,78 +294,6 @@ function showFiltersClick() {
                 }
             });
         });
-    </script>
-    <?php
-}
-
-add_action('wp_head', 'fixWpAdminBar');
-function fixWpAdminBar(){
-    ?>
-    <script>
-    jQuery( document ).ready( function() {
-        var wpAdminBar = jQuery('#wpadminbar');
-        var fusionHeaderWrapper = jQuery('#wrapper .fusion-header-wrapper');
-        var secondaryHeader = fusionHeaderWrapper.find('.fusion-secondary-header');
-        var header = fusionHeaderWrapper.find('.fusion-header');
-        var countWaitingForResize = 0;
-        var fixNumber = 0;
-
-        function checkFix(element, expectedTop, iterationsLeft, myFixNumber){
-            jQuery.data(this, 'checkFixTimer', setTimeout(function () {
-                if(countWaitingForResize == 0 && myFixNumber == fixNumber ) {
-                    if (expectedTop!=0 && parseInt(element.css('top')) != expectedTop) {
-                        fixTopPositions();
-                    }
-                    else {
-                        if (iterationsLeft > 0) {
-                            checkFix(element, expectedTop, iterationsLeft - 1);
-                        }
-                    }
-                }
-            }, 50));
-        }
-
-        function fixTopPositions(){
-            fixNumber++;
-            var secondaryHeaderTop = wpAdminBar.outerHeight() * 1;
-            var headerTop = secondaryHeaderTop + secondaryHeader.outerHeight();
-            if(headerTop>0) {
-                secondaryHeader.css('top', secondaryHeaderTop + 'px');
-                header.css('top', headerTop + 'px', 'important');
-                header.css('max-height', 'calc(100% - ' + headerTop + 'px)', 'important');
-                fusionHeaderWrapper.css(
-                    'min-height',
-                    ( headerTop + header.outerHeight() - secondaryHeaderTop - jQuery('.fusion-mobile-nav-holder:visible').height() * 1 ) + 'px'
-                );
-                checkFix(header, headerTop, 20, fixNumber);
-            }
-        }
-
-        if(jQuery('body').width() <= 1000) {
-            fixTopPositions();
-        }
-
-        jQuery( window ).resize(function() {
-            if(jQuery('body').width() <= 1000) {
-                clearTimeout(jQuery.data(this, 'resizeTimer'));
-                clearTimeout(jQuery.data(this, 'checkFixTimer'));
-                jQuery.data(this, 'resizeTimer', setTimeout(function() {
-                    fixTopPositions();
-                }, 200));
-            }
-        });
-
-
-        jQuery(window).scroll(function() {
-            if(jQuery('body').width() <= 1000) {
-                clearTimeout(jQuery.data(this, 'scrollTimer'));
-                clearTimeout(jQuery.data(this, 'checkFixTimer'));
-                jQuery.data(this, 'scrollTimer', setTimeout(function () {
-                    fixTopPositions();
-                }, 50));
-            }
-        });
-    });
     </script>
     <?php
 }

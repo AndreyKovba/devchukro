@@ -276,3 +276,17 @@ li.product.product-list-view .buy-button-clearfix{
         top: 56px;
     }
 }
+@media only screen and (max-width: 615px) {
+    #wrapper .fusion-header-wrapper.with-search {
+        min-height: 200px;
+    }
+    #wrapper .fusion-header-wrapper.with-search .fusion-header {
+        top: 114px;
+    }
+}
+/**********************************/
+@media only screen and (max-width: 800px) {
+    #wrapper .fusion-fullwidth-1 {
+        padding-top: 0px !important;
+    }
+}
