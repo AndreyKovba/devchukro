@@ -116,7 +116,7 @@ li.product.product-list-view .buy-button-clearfix{
 
 .product a.button-center {
     display: block;
-    background: #d93010;
+    background: #c93f35;
     color: white;
     font-weight: bold;
     padding: 7px 0px;
@@ -124,7 +124,7 @@ li.product.product-list-view .buy-button-clearfix{
     font-size: 16px;
 }
 .product a.button-center:hover {
-    background: #c93f35;
+    background: #b93f25;
 }
 
 .product-buttons{
@@ -146,6 +146,9 @@ li.product.product-list-view .buy-button-clearfix{
 }
 
 @media only screen and (max-width: 410px) {
+    #wrapper .post-content ul.products {
+        margin-top: -6px;
+    }
     #wrapper .product .featured-image,
     #wrapper .product .crossfade-images {
         line-height: 100px;
