@@ -4,7 +4,7 @@ function my_theme_enqueue_styles() {
     $parent_style = 'parent-style';
     wp_enqueue_style( $parent_style, get_template_directory_uri() . '/style.css?v=150118' );
     wp_enqueue_style( 'child-style',
-        get_stylesheet_directory_uri() . '/style.css?v=1701184',
+        get_stylesheet_directory_uri() . '/style.css?v=180118',
         array( $parent_style ),
         wp_get_theme()->get('Version')
     );
@@ -80,7 +80,11 @@ function avada_child_after_main_container() {
             }
 
             var searchForm = '<?php
-                echo str_replace("'", '"', str_replace("\n", " ", get_search_form(false)));
+                echo str_replace("'", '"',
+                    str_replace("\r", " ",
+                        str_replace("\n", " ", get_search_form(false))
+                    )
+                );
                 ?>';
             var pattern = '#menu-top-secondary-menu a[href="#search-in-menu"]';
             var isSearchOpen = false;
