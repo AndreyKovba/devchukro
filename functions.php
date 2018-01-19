@@ -4,7 +4,7 @@ function my_theme_enqueue_styles() {
     $parent_style = 'parent-style';
     wp_enqueue_style( $parent_style, get_template_directory_uri() . '/style.css?v=150118' );
     wp_enqueue_style( 'child-style',
-        get_stylesheet_directory_uri() . '/style.css?v=180118',
+        get_stylesheet_directory_uri() . '/style.css?v=190118',
         array( $parent_style ),
         wp_get_theme()->get('Version')
     );
@@ -75,6 +75,15 @@ function avada_child_after_main_container() {
     ?>
     <script>
         jQuery(document).ready(function () {
+            if(jQuery('.useful-links').length){
+                var usefulLinksSiblings = jQuery('.useful-links').siblings();
+                if(usefulLinksSiblings.length>0){
+                    var searchBar = usefulLinksSiblings.last();
+                    searchBar.removeClass('col-lg-4 col-md-4 col-sm-4');
+                    searchBar.addClass('col-lg-8 col-md-8 col-sm-8');
+                }
+            }
+
             /*********fixWpAdminBar*************/
             var wpAdminBar = jQuery('#wpadminbar');
             var fusionHeaderWrapper = jQuery('#wrapper .fusion-header-wrapper');

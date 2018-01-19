@@ -116,7 +116,7 @@ li.product.product-list-view .buy-button-clearfix{
 
 .product a.button-center {
     display: block;
-    background: #c93f35;
+    background: #d93010;
     color: white;
     font-weight: bold;
     padding: 7px 0px;
@@ -124,7 +124,7 @@ li.product.product-list-view .buy-button-clearfix{
     font-size: 16px;
 }
 .product a.button-center:hover {
-    background: #b93f25;
+    background: #c93f35;
 }
 
 .product-buttons{
@@ -302,4 +302,10 @@ li.product.product-list-view .buy-button-clearfix{
     #wrapper .fusion-fullwidth-1 {
         padding-top: 0px !important;
     }
+}
+#wrapper .fusion-grid-list-view{
+    display: none;
+}
+#wrapper .useful-links{
+    display: none;
 }
