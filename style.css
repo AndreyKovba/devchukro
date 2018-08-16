@@ -321,11 +321,11 @@ li.product.product-list-view .buy-button-clearfix{
     display: none;
 }
 
-@media only screen and (max-width: 615px) {
-    #menu-secondary-top-menu li {
-        border: none;
-    }
+#menu-secondary-top-menu li {
+    border: none;
+}
 
+@media only screen and (max-width: 615px) {
     #menu-secondary-top-menu .fusion-mobile-menu-icons {
         margin: 0;
     }
