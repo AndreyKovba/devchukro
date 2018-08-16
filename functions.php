@@ -2,9 +2,9 @@
 
 function my_theme_enqueue_styles() {
     $parent_style = 'parent-style';
-    wp_enqueue_style( $parent_style, get_template_directory_uri() . '/style.css?v=150118' );
+    wp_enqueue_style( $parent_style, get_template_directory_uri() . '/style.css?v=160818' );
     wp_enqueue_style( 'child-style',
-        get_stylesheet_directory_uri() . '/style.css?v=190118',
+        get_stylesheet_directory_uri() . '/style.css?v=160818',
         array( $parent_style ),
         wp_get_theme()->get('Version')
     );
@@ -152,54 +152,16 @@ function avada_child_after_main_container() {
                 return jQuery(window).width() * 1 <= 600
             }
 
-            var searchForm = '<?php
-                echo str_replace("'", '"',
-                    str_replace("\r", " ",
-                        str_replace("\n", " ", get_search_form(false))
-                    )
-                );
-                ?>';
-            var pattern = '#menu-top-secondary-menu a[href="#search-in-menu"]';
-            var isSearchOpen = false;
-            var wasSmallScreen = isSmallScreen();
-            jQuery(pattern).parent().append('<div class="search-in-menu-overlay"></div>');
-            jQuery(pattern).parent().append('<div class="search-in-menu" style="display:none;">' + searchForm + '</div>');
-            jQuery(pattern).parent().parent().prepend('<div class="search-out-menu" style="display:none;">' + searchForm + '</div>');
-
-            jQuery( window ).resize(function() {
-                if( isSearchOpen && wasSmallScreen !== isSmallScreen() ){
-                    var searchInMenu = jQuery('.search-in-menu');
-                    var searchInMenuLink = searchInMenu.parent().children('a');
-                    var searchOutMenu = jQuery('.search-out-menu');
-                    if(wasSmallScreen){
-                        searchOutMenu.hide();
-                        searchInMenu.show();
-                        searchInMenuLink.hide();
-                    }
-                    else{
-                        searchOutMenu.show();
-                        searchInMenu.hide();
-                        searchInMenuLink.show();
-                    }
-                    wasSmallScreen = !wasSmallScreen;
-                }
-            });
-
-            jQuery(document).on('click', pattern, function(event){
+            jQuery('#menu-main .search').remove();
+            jQuery(document).on('click', '.fusion-icon-bars', function(event){
                 event.preventDefault();
-                var fusionHeaderWrapper = jQuery(this).closest('.fusion-header-wrapper');
-                fusionHeaderWrapper.addClass('with-search');
-                var parent = jQuery(this).parent();
-                if( isSmallScreen() ){
-                    parent.parent().find('.search-out-menu').fadeIn(500, fixTopPositions);
+                const fusionHeader = jQuery('.fusion-header');
+                if (fusionHeader.hasClass('menu-open')) {
+                    fusionHeader.removeClass('menu-open');
                 }
-                else{
-                    jQuery(this).hide();
-                    parent.find('.search-in-menu').fadeIn(500, fixTopPositions);
+                else {
+                    fusionHeader.addClass('menu-open');
                 }
-                parent.find('.search-in-menu-overlay').show();
-                isSearchOpen = true;
-                fixTopPositions();
             });
 
             jQuery(document).on('click', '.search-in-menu-overlay', function(event){
@@ -337,4 +299,44 @@ function admin_custom_styles() {
         }
     </style>
     <?php
+}
+
+function avada_add_search_to_main_nav( $items, $args ) {
+    $ubermenu = false;
+
+    if ( function_exists( 'ubermenu_get_menu_instance_by_theme_location' ) && ubermenu_get_menu_instance_by_theme_location( $args->theme_location ) ) {
+        // disable woo cart on ubermenu navigations
+        $ubermenu = true;
+    }
+
+    if ( Avada()->settings->get( 'header_layout' ) != 'v6' && false == $ubermenu ) {
+        if ( 'main_navigation' == $args->theme_location || 'sticky_navigation' == $args->theme_location ) {
+            if ( Avada()->settings->get( 'main_nav_search_icon' ) ) {
+                $items .= '<li class="fusion-custom-menu-item fusion-main-menu-search">';
+                $items .= '<a class="fusion-main-menu-icon"></a>';
+                $items .= '<div class="fusion-custom-menu-item-contents">';
+                $items .= get_search_form( false );
+                $items .= '</div>';
+                $items .= '</li>';
+            }
+        }
+        if ('main_navigation' != $args->theme_location) {
+            $searchForm = str_replace("'", '"',
+                str_replace("\r", " ",
+                    str_replace("\n", " ", get_search_form(false))
+                )
+            );
+            $items = "<li>" . get_avada_mobile_main_menu() . "</li>
+                <li><div class='search-in-menu'>$searchForm</div></li>" .
+                $items;
+        }
+    }
+
+    return $items;
+}
+
+function get_avada_mobile_main_menu() {
+    ob_start();
+    avada_mobile_main_menu();
+    return ob_get_clean();
 }

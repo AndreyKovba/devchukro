@@ -34,6 +34,16 @@
     height: 30px;
 }
 
+.fusion-body #wrapper .woocommerce-container .products- li {
+    float: left;
+    width: 24%;
+    margin-right: 1.0%;
+    margin-bottom: 11px;
+}
+.fusion-body #wrapper .woocommerce-container .products- > li:nth-child(4n+1){
+    clear: both;
+}
+
 @media only screen and (max-width: 1000px){
     .fusion-body #wrapper .woocommerce-container .products li{
         width: 32%;
@@ -59,11 +69,6 @@
         margin-left: 0px !important;
         margin-right: 1% !important;
     }
-}
-
-.search-in-menu,
-.search-in-menu-overlay{
-    display: none;
 }
 
 .search-in-menu-overlay{
@@ -308,4 +313,55 @@ li.product.product-list-view .buy-button-clearfix{
 }
 #wrapper .useful-links{
     display: none;
+}
+
+/**********menu search fix**************/
+#wrapper #menu-main .search,
+#wrapper .fusion-header .fusion-mobile-menu-icons {
+    display: none;
+}
+
+@media only screen and (max-width: 615px) {
+    #menu-secondary-top-menu li {
+        border: none;
+    }
+
+    #menu-secondary-top-menu .fusion-mobile-menu-icons {
+        margin: 0;
+    }
+    #menu-secondary-top-menu .fusion-mobile-menu-icons a {
+        margin: 0;
+    }
+    .fusion-menu-cart {
+        font-size: 9px;
+    }
+
+    #menu-secondary-top-menu .search-in-menu {
+        max-width: 160px;
+    }
+
+    #menu-secondary-top-menu .search-in-menu .search-table {
+        position: relative;
+    }
+    #menu-secondary-top-menu .search-in-menu .search-table .search-field input[type="text"]{
+        padding-right: 25px;
+    }
+    #menu-secondary-top-menu .search-in-menu .search-table .search-button {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+    #menu-secondary-top-menu .search-in-menu .search-table .search-button input[type="submit"]{
+        background: none;
+        color: black;
+    }
+
+    /******if menu openned****/
+    .fusion-header.menu-open .fusion-logo {
+        display: none;
+    }
+    #wrapper .fusion-header.menu-open .fusion-mobile-nav-holder {
+        padding-top: 0;
+        margin-top: -20px;
+    }
 }
