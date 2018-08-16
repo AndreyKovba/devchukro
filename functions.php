@@ -2,9 +2,9 @@
 
 function my_theme_enqueue_styles() {
     $parent_style = 'parent-style';
-    wp_enqueue_style( $parent_style, get_template_directory_uri() . '/style.css?v=1608181' );
+    wp_enqueue_style( $parent_style, get_template_directory_uri() . '/style.css?v=1608182' );
     wp_enqueue_style( 'child-style',
-        get_stylesheet_directory_uri() . '/style.css?v=1608181',
+        get_stylesheet_directory_uri() . '/style.css?v=1608182',
         array( $parent_style ),
         wp_get_theme()->get('Version')
     );
@@ -153,7 +153,7 @@ function avada_child_after_main_container() {
             }
 
             jQuery('#menu-main .search').remove();
-            jQuery(document).on('click', '.fusion-icon-bars', function(event){
+            jQuery(document).on('click', '.fusion-icon-bars', function(event) {
                 event.preventDefault();
                 const fusionHeader = jQuery('.fusion-header');
                 if (fusionHeader.hasClass('menu-open')) {
@@ -164,7 +164,16 @@ function avada_child_after_main_container() {
                 }
             });
 
-            jQuery(document).on('click', '.search-in-menu-overlay', function(event){
+            jQuery(document).on('touchend', '.fusion-open-submenu', function(event) {
+                const parentLi = jQuery(this);
+                jQuery.data(this, 'submenuOpenTimer', setTimeout(function () {
+                    if (jQuery(window).height() - (parentLi.offset().top + parentLi.height()) < 20) {
+                        parentLi.closest('.fusion-header.menu-open').animate({ scrollTop: jQuery(document).height() }, 50);
+                    }
+                }, 100));
+            });
+
+            jQuery(document).on('click', '.search-in-menu-overlay', function(event) {
                 event.preventDefault();
                 var fusionHeaderWrapper = jQuery(this).closest('.fusion-header-wrapper');
                 fusionHeaderWrapper.removeClass('with-search');
