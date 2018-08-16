@@ -2,9 +2,9 @@
 
 function my_theme_enqueue_styles() {
     $parent_style = 'parent-style';
-    wp_enqueue_style( $parent_style, get_template_directory_uri() . '/style.css?v=160818' );
+    wp_enqueue_style( $parent_style, get_template_directory_uri() . '/style.css?v=1608181' );
     wp_enqueue_style( 'child-style',
-        get_stylesheet_directory_uri() . '/style.css?v=160818',
+        get_stylesheet_directory_uri() . '/style.css?v=1608181',
         array( $parent_style ),
         wp_get_theme()->get('Version')
     );
