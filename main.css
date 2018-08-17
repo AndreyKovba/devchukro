@@ -108,7 +108,7 @@ li.product.product-list-view .buy-button-clearfix{
     float: none;
 }
 
-#wrapper .product a.button-center {
+.product a.button-center {
     display: block;
     background: #d93010;
     color: white;
@@ -117,7 +117,7 @@ li.product.product-list-view .buy-button-clearfix{
     text-align: center;
     font-size: 16px;
 }
-#wrapper .product a.button-center:hover {
+.product a.button-center:hover {
     background: #c93f35;
 }
 
