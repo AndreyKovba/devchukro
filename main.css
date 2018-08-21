@@ -356,3 +356,27 @@ li.product.product-list-view .buy-button-clearfix{
         margin-top: -20px;
     }
 }
+
+/***Hide non-sticky menu****/
+#wrapper .fusion-secondary-menu .menu-item {
+    display: none;
+}
+
+#wrapper .fusion-secondary-menu .fusion-mobile-menu-sep {
+    top: 40px !important;
+}
+
+#wrapper .fusion-sticky-menu li.menu-item > a {
+    line-height: 86px;
+}
+
+#wrapper .fusion-sticky-menu .searchform {
+    height: 80px;
+    line-height: 80px;
+}
+
+#wrapper .searchform input {
+    display: inline-block;
+    height: 39px;
+}
+
