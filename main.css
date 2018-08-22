@@ -357,26 +357,21 @@ li.product.product-list-view .buy-button-clearfix{
     }
 }
 
-/***Hide non-sticky menu****/
-#wrapper .fusion-secondary-menu .menu-item {
-    display: none;
-}
+/****Sticky menu***/
+@media only screen and (min-width: 1000px) {
+    .fusion-header-wrapper .fusion-secondary-header {
+        z-index: 100;
+        position: fixed;
+        width: 100%;
+    }
 
-#wrapper .fusion-secondary-menu .fusion-mobile-menu-sep {
-    top: 40px !important;
-}
+    .fusion-header-wrapper .fusion-header-v2 .fusion-header {
+        position: fixed;
+        top: 55px !important;
+        width: 100%;
+    }
 
-#wrapper .fusion-sticky-menu li.menu-item > a {
-    line-height: 86px;
+    .admin-bar .fusion-header-wrapper .fusion-header-v2 .fusion-header {
+        top: calc(32px + 55px) !important;
+    }
 }
-
-#wrapper .fusion-sticky-menu .searchform {
-    height: 80px;
-    line-height: 80px;
-}
-
-#wrapper .searchform input {
-    display: inline-block;
-    height: 39px;
-}
-
