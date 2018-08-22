@@ -366,6 +366,7 @@ li.product.product-list-view .buy-button-clearfix{
     }
 
     .fusion-header-wrapper .fusion-header-v2 .fusion-header {
+        z-index: 50;
         position: fixed;
         top: 55px !important;
         width: 100%;
