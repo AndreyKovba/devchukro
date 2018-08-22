@@ -2,9 +2,9 @@
 
 function my_theme_enqueue_styles() {
     $parent_style = 'parent-style';
-    wp_enqueue_style( $parent_style, get_template_directory_uri() . '/style.css?v=2208182' );
+    wp_enqueue_style( $parent_style, get_template_directory_uri() . '/style.css?v=2208185' );
     wp_enqueue_style( 'child-style',
-        get_stylesheet_directory_uri() . '/main.css?v=2208182',
+        get_stylesheet_directory_uri() . '/main.css?v=2208185',
         array( $parent_style ),
         wp_get_theme()->get('Version')
     );
@@ -197,6 +197,14 @@ function avada_child_after_main_container() {
 
             /********open cart submenu on click***********/
             var isCartSubmenuVisible = false;
+            var firstOpen = true;
+            jQuery(document).on('mouseover', '.fusion-menu-cart .fusion-secondary-menu-icon', function() {
+                if (firstOpen) {
+                    fixLongCartList();
+                    firstOpen = false;
+                }
+            });
+
             jQuery(document).on('click', '.fusion-menu-cart .fusion-secondary-menu-icon', function(event) {
                 event.preventDefault();
                 var cartSubmenu = jQuery(this).closest('.fusion-menu-cart').find('.fusion-custom-menu-item-contents');
@@ -209,6 +217,10 @@ function avada_child_after_main_container() {
                     cartSubmenu.css('visibility', 'visible');
                     cartSubmenu.css('opacity', 1);
                     isCartSubmenuVisible = true;
+                    if (firstOpen) {
+                        fixLongCartList();
+                        firstOpen = false;
+                    }
                 }
             });
 
@@ -219,6 +231,15 @@ function avada_child_after_main_container() {
                     cartSubmenu.css('opacity', '');
                 }
             });
+
+            /*******Fix long cart list********/
+            function fixLongCartList() {
+                var cartItems = jQuery('.fusion-header-wrapper .fusion-secondary-header .fusion-menu-cart-items');
+                cartItems.prepend('<div class="fusion-menu-cart-items-list"></div>');
+                cartItems.find('.fusion-menu-cart-item').each(function() {
+                    jQuery(this).detach().appendTo(cartItems.find(".fusion-menu-cart-items-list"));
+                });
+            }
         });
     </script>
     <?php
