@@ -194,6 +194,31 @@ function avada_child_after_main_container() {
                 isSearchOpen = false;
                 fixTopPositions();
             });
+
+            /********open cart submenu on click***********/
+            var isCartSubmenuVisible = false;
+            jQuery(document).on('click', '.fusion-menu-cart .fusion-secondary-menu-icon', function(event) {
+                event.preventDefault();
+                var cartSubmenu = jQuery(this).closest('.fusion-menu-cart').find('.fusion-custom-menu-item-contents');
+                if (isCartSubmenuVisible) {
+                    cartSubmenu.css('visibility', 'none');
+                    cartSubmenu.css('opacity', 0);
+                    isCartSubmenuVisible = false;
+                }
+                else {
+                    cartSubmenu.css('visibility', 'visible');
+                    cartSubmenu.css('opacity', 1);
+                    isCartSubmenuVisible = true;
+                }
+            });
+
+            jQuery(document).on('mouseleave', '.fusion-menu-cart .fusion-secondary-menu-icon', function(event) {
+                var cartSubmenu = jQuery(this).closest('.fusion-menu-cart').find('.fusion-custom-menu-item-contents');
+                if (!isCartSubmenuVisible) {
+                    cartSubmenu.css('visibility', '');
+                    cartSubmenu.css('opacity', '');
+                }
+            });
         });
     </script>
     <?php
