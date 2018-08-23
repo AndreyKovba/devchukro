@@ -285,11 +285,14 @@ function iphoneMouseEnterFix() {
 
             }
             jQuery('li.product').on( 'touchstart', '.add_to_cart_button', function(e){
+                const oldTopPosition = jQuery(window).scrollTop();
                 clicked = false;
-                var self = this;
-                waitForClick(10, function() {
+                waitForClick(10, () => {
                     if (!clicked) {
-                        jQuery(self).click();
+                        const newTopPosition = jQuery(window).scrollTop();
+                        if (Math.abs(newTopPosition - oldTopPosition) <= 2 ) {
+                            jQuery(this).click();
+                        }
                     }
                 });
             });
