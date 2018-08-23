@@ -252,9 +252,6 @@ li.product.product-list-view .buy-button-clearfix{
 }
 
 @media only screen and (min-width: 1000px) {
-    #wrapper .fusion-header-wrapper{
-        min-height: 50px !important;
-    }
     #wrapper .fusion-header-wrapper .fusion-secondary-header,
     #wrapper .fusion-header-wrapper .fusion-header{
         max-height: initial !important;
@@ -358,6 +355,10 @@ li.product.product-list-view .buy-button-clearfix{
 }
 
 /****Sticky menu***/
+.fusion-header-wrapper {
+    min-height: 161px;
+}
+
 @media only screen and (min-width: 1000px) {
     .fusion-header-wrapper .fusion-secondary-header {
         z-index: 100;
