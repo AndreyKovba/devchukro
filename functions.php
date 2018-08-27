@@ -253,7 +253,7 @@ function avada_child_after_main_container() {
                     }
                 });
                 const fusionWooCartSeparator = jQuery('.menu-text .fusion-woo-cart-separator').html();
-                const totalPriceNew = kcoWidget.find('#kco-page-total .woocommerce-Price-amount').html();
+                const totalPriceNew = kcoWidget.find('#kco-page-subtotal-amount .woocommerce-Price-amount').html();
                 jQuery('.menu-text')
                     .html(itemsTotalCount + ' Item(s) ')
                     .append('<span class="fusion-woo-cart-separator">' + fusionWooCartSeparator + '</span>')
