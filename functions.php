@@ -2,9 +2,9 @@
 
 function my_theme_enqueue_styles() {
     $parent_style = 'parent-style';
-    wp_enqueue_style( $parent_style, get_template_directory_uri() . '/style.css?v=230818' );
+    wp_enqueue_style( $parent_style, get_template_directory_uri() . '/style.css?v=270818' );
     wp_enqueue_style( 'child-style',
-        get_stylesheet_directory_uri() . '/main.css?v=230818',
+        get_stylesheet_directory_uri() . '/main.css?v=270818',
         array( $parent_style ),
         wp_get_theme()->get('Version')
     );
@@ -16,7 +16,6 @@ function child_theme_translation() {
 }
 add_action( 'after_setup_theme', 'child_theme_translation' );
 
-add_action( 'woocommerce_before_shop_loop', 'add_before_catalog_ordering', 30 );
 function add_before_catalog_ordering(){
     ?>
     <div class="show-filters-block">
@@ -24,8 +23,8 @@ function add_before_catalog_ordering(){
     </div>
     <?php
 }
+add_action( 'woocommerce_before_shop_loop', 'add_before_catalog_ordering', 30 );
 
-add_action( 'woocommerce_after_shop_loop_item', 'avada_woocommerce_buy_button', 110 );
 function avada_woocommerce_buy_button( $args = array() ) {
     global $product;
 
@@ -49,6 +48,7 @@ function avada_woocommerce_buy_button( $args = array() ) {
         <?php
     }
 }
+add_action( 'woocommerce_after_shop_loop_item', 'avada_woocommerce_buy_button', 110 );
 
 function drawBuyButton($args){
     global $product;
@@ -70,7 +70,6 @@ function drawBuyButton($args){
         $product );
 }
 
-add_action( 'avada_after_main_container','avada_child_after_main_container', 10 );
 function avada_child_after_main_container() {
     ?>
     <script>
@@ -240,10 +239,58 @@ function avada_child_after_main_container() {
                     jQuery(this).detach().appendTo(cartItems.find(".fusion-menu-cart-items-list"));
                 });
             }
+
+            /****** Fix top cart after klarna's items count changed *********/
+            function fixTopCart(kcoWidget) {
+                let itemsTotalCount = 0;
+                let itemsInfo = {};
+                kcoWidget.find('#klarna-checkout-cart tr').each(function(index, elem) {
+                    const href = jQuery(elem).find('.product-name a').attr('href');
+                    if (typeof href !== 'undefined') {
+                        const count = jQuery(elem).find('input.qty').val() * 1;
+                        itemsTotalCount += count;
+                        itemsInfo[href] = count;
+                    }
+                });
+                const fusionWooCartSeparator = jQuery('.menu-text .fusion-woo-cart-separator').html();
+                const totalPriceNew = kcoWidget.find('#kco-page-total .woocommerce-Price-amount').html();
+                jQuery('.menu-text')
+                    .html(itemsTotalCount + ' Item(s) ')
+                    .append('<span class="fusion-woo-cart-separator">' + fusionWooCartSeparator + '</span>')
+                    .append('<span class="woocommerce-Price-amount"> ' + totalPriceNew + '</span>');
+
+                jQuery('.fusion-menu-cart-item a').each(function(index, elem) {
+                    const href = jQuery(elem).attr('href');
+                    if (typeof href !== 'undefined') {
+                        const updatedElementCount = itemsInfo[href];
+                        if (typeof updatedElementCount !== 'undefined') {
+                            const woocommercePriceAmount = jQuery(elem).find('.woocommerce-Price-amount').html();
+                            jQuery(elem).find('.fusion-menu-cart-item-quantity')
+                                .html(updatedElementCount + ' x ')
+                                .append('<span class="woocommerce-Price-amount">' + woocommercePriceAmount + '</span>');
+                        }
+                        else {
+                            jQuery(elem).remove();
+                        }
+                    }
+                });
+            }
+
+            const kcoWidget = jQuery('#klarna-checkout-widget');
+            const totalPriceSelector = '#kco-page-total .woocommerce-Price-amount';
+            let totalPriceOld = kcoWidget.find(totalPriceSelector).text();
+            kcoWidget.bind("DOMSubtreeModified",function(){
+                const totalPriceNew = kcoWidget.find(totalPriceSelector).text();
+                if (totalPriceNew !== '' && totalPriceNew !== totalPriceOld) {
+                    totalPriceOld = totalPriceNew;
+                    fixTopCart(kcoWidget, totalPriceNew);
+                }
+            });
         });
     </script>
     <?php
 }
+add_action( 'avada_after_main_container','avada_child_after_main_container', 10 );
 
 add_filter( 'woocommerce_get_price_html', 'wpa83367_price_html', 100, 2 );
 function wpa83367_price_html( $price, $product ){

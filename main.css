@@ -398,3 +398,8 @@ li.product.product-list-view .buy-button-clearfix{
     right: 0;
     height: 43px;
 }
+
+/******fix klarna checkout table******/
+.kco-centeralign.product-quantity {
+    width: 135px;
+}
