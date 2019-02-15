@@ -88,12 +88,26 @@ function avada_child_after_main_container() {
             var fusionHeaderWrapper = jQuery('#wrapper .fusion-header-wrapper');
             var secondaryHeader = fusionHeaderWrapper.find('.fusion-secondary-header');
             var header = fusionHeaderWrapper.find('.fusion-header');
-            var countWaitingForResize = 0;
             var fixNumber = 0;
+
+            function getFixHeaderStyle(topPosition) {
+                return jQuery(`
+                    <style>
+                        @media only screen and (max-width: 615px) {
+                            #wrapper .fusion-header-wrapper .fusion-secondary-header, #wrapper .fusion-header-wrapper .fusion-header {
+                                top: ` + topPosition + `px;
+                            }
+                        }
+                    </style>
+                `);
+            }
+
+            const style_block = jQuery(`<div class="fix-header-styles"></div>`);
+            jQuery('body').append(style_block);
 
             function checkFix(element, expectedTop, iterationsLeft, myFixNumber){
                 jQuery.data(this, 'checkFixTimer', setTimeout(function () {
-                    if(countWaitingForResize == 0 && myFixNumber == fixNumber ) {
+                    if(myFixNumber == fixNumber ) {
                         if (expectedTop!=0 && parseInt(element.css('top')) != expectedTop) {
                             fixTopPositions();
                         }
@@ -118,6 +132,7 @@ function avada_child_after_main_container() {
                         'min-height',
                         ( headerTop + header.outerHeight() - secondaryHeaderTop - jQuery('.fusion-mobile-nav-holder:visible').height() * 1 ) + 'px'
                     );
+                    style_block.html(getFixHeaderStyle(headerTop));
                     checkFix(header, headerTop, 20, fixNumber);
                 }
             }
