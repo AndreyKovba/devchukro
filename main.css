@@ -432,7 +432,7 @@ li.product.product-list-view .buy-button-clearfix{
     .search-in-menu .search-table {
         width: auto;
     }
-    #wrapper .fusion-header-wrapper {
+    body #wrapper>.fusion-header-wrapper {
         min-height: 51px;
     }
     .search-in-menu {
