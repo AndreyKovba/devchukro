@@ -403,3 +403,55 @@ li.product.product-list-view .buy-button-clearfix{
 .kco-centeralign.product-quantity {
     width: 135px;
 }
+
+.search-in-menu .show-search-button,
+.fusion-secondary-menu > ul > li > a.mobile-header-logo {
+    display: none;
+}
+@media only screen and (max-width: 615px) {
+    #wrapper .fusion-mobile-menu-design-modern.fusion-header-v2 .fusion-header {
+        border: none;
+        padding: 0;
+    }
+    #wrapper .fusion-mobile-menu-design-modern.fusion-header-v2 .fusion-header .fusion-logo {
+        display: none;
+    }
+    #wrapper .fusion-mobile-menu-design-modern.fusion-header-v2 .fusion-mobile-nav-holder {
+        margin: 20px 0;
+    }
+    .fusion-secondary-menu > ul > li > a.mobile-header-logo {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        padding: 0;
+    }
+    #menu-secondary-top-menu .search-in-menu {
+        max-width: 230px;
+    }
+    .search-in-menu .search-table {
+        width: auto;
+    }
+    #wrapper .fusion-header-wrapper {
+        min-height: 51px;
+    }
+    .search-in-menu {
+        line-height: 8px;
+    }
+    .search-in-menu .searchform {
+        display: none;
+        float: left;
+        max-width: calc(100% - 38px);
+    }
+    .search-in-menu .show-search-button {
+        background: #000000;
+        display: inline-block;
+        color: #FFFFFF;
+        cursor: pointer;
+        font-family: 'icomoon';
+        height: 38px;
+        width: 38px;
+        text-align: center;
+        line-height: 38px;
+    }
+}

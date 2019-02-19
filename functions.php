@@ -2,9 +2,9 @@
 
 function my_theme_enqueue_styles() {
     $parent_style = 'parent-style';
-    wp_enqueue_style( $parent_style, get_template_directory_uri() . '/style.css?v=270818' );
+    wp_enqueue_style( $parent_style, get_template_directory_uri() . '/style.css?v=190219' );
     wp_enqueue_style( 'child-style',
-        get_stylesheet_directory_uri() . '/main.css?v=270818',
+        get_stylesheet_directory_uri() . '/main.css?v=190219',
         array( $parent_style ),
         wp_get_theme()->get('Version')
     );
@@ -90,18 +90,6 @@ function avada_child_after_main_container() {
             var header = fusionHeaderWrapper.find('.fusion-header');
             var fixNumber = 0;
 
-            function getFixHeaderStyle(topPosition) {
-                return jQuery(`
-                    <style>
-                        @media only screen and (max-width: 615px) {
-                            #wrapper .fusion-header-wrapper .fusion-secondary-header, #wrapper .fusion-header-wrapper .fusion-header {
-                                top: ` + topPosition + `px;
-                            }
-                        }
-                    </style>
-                `);
-            }
-
             const style_block = jQuery(`<div class="fix-header-styles"></div>`);
             jQuery('body').append(style_block);
 
@@ -128,17 +116,16 @@ function avada_child_after_main_container() {
                     secondaryHeader.css('top', secondaryHeaderTop + 'px');
                     header.css('top', headerTop + 'px', 'important');
                     header.css('max-height', 'calc(100% - ' + headerTop + 'px)', 'important');
+                    let headerHeight = 0;
+                    if (header.is(':visible')) {
+                        headerHeight = header.outerHeight();
+                    }
                     fusionHeaderWrapper.css(
                         'min-height',
-                        ( headerTop + header.outerHeight() - secondaryHeaderTop - jQuery('.fusion-mobile-nav-holder:visible').height() * 1 ) + 'px'
+                        ( headerTop + headerHeight - secondaryHeaderTop - jQuery('.fusion-mobile-nav-holder:visible').height() * 1 ) + 'px'
                     );
-                    style_block.html(getFixHeaderStyle(headerTop));
                     checkFix(header, headerTop, 20, fixNumber);
                 }
-            }
-
-            if(jQuery('body').width() <= 1000) {
-                fixTopPositions();
             }
 
             jQuery( window ).resize(function() {
@@ -151,15 +138,20 @@ function avada_child_after_main_container() {
                 }
             });
 
-            jQuery(window).scroll(function() {
-                if(jQuery('body').width() <= 1000) {
-                    clearTimeout(jQuery.data(this, 'scrollTimer'));
-                    clearTimeout(jQuery.data(this, 'checkFixTimer'));
-                    jQuery.data(this, 'scrollTimer', setTimeout(function () {
-                        fixTopPositions();
-                    }, 50));
+            /********** Show search bar ****************/
+            jQuery(document).on('click', '.show-search-button', function(event) {
+                event.preventDefault();
+                const searchForm = jQuery('.search-in-menu .searchform');
+                if (searchForm.is(':visible')) {
+                    searchForm.hide();
+                    fixTopPositions();
+                }
+                else {
+                    searchForm.css('display', 'inline-block');
+                    fixTopPositions();
                 }
             });
+
             /**********fixWpAdminBar end****************/
 
             function isSmallScreen() {
@@ -446,8 +438,23 @@ function avada_add_search_to_main_nav( $items, $args ) {
                     str_replace("\n", " ", get_search_form(false))
                 )
             );
+            $site_url = get_site_url();
+            $image_src = get_stylesheet_directory_uri() . '/CMF-Logo-X.png';
             $items = "<li>" . get_avada_mobile_main_menu() . "</li>
-                <li><div class='search-in-menu'>$searchForm</div></li>" .
+                <li>
+                    <a
+                        class='mobile-header-logo'
+                        href='{$site_url}'
+                    >
+                        <img src='{$image_src}'/>
+                    </a>
+                </li>
+                <li>
+                    <div class='search-in-menu'>
+                        $searchForm
+                        <div class='show-search-button'></div>
+                    </div>
+                </li>" .
                 $items;
         }
     }
