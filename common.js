@@ -57,12 +57,16 @@ jQuery(document).ready(function () {
     jQuery(document).on('click', '.show-search-button', function(event) {
         event.preventDefault();
         const searchForm = jQuery('.search-in-menu .searchform');
+        const fusionMenuCart = searchForm.closest('.fusion-secondary-menu').find('.fusion-menu-cart');
+        console.log(fusionMenuCart.html());
         if (searchForm.is(':visible')) {
             searchForm.hide();
+            fusionMenuCart.css('float', 'right');
             fixTopPositions();
         }
         else {
             searchForm.css('display', 'inline-block');
+            fusionMenuCart.css('float', 'none');
             fixTopPositions();
         }
     });

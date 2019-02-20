@@ -464,4 +464,11 @@ li.product.product-list-view .buy-button-clearfix{
     .fusion-secondary-menu > ul > li {
         border: none;
     }
+    .fusion-body .fusion-mobile-menu-design-modern .fusion-secondary-menu > ul > li.fusion-menu-cart {
+        float: right;
+        margin-right: 10px;
+    }
+    .top-menu-aligned {
+        margin-top: 6px;
+    }
 }
