@@ -6,8 +6,7 @@ jQuery(document).ready(function () {
     var header = fusionHeaderWrapper.find('.fusion-header');
     var fixNumber = 0;
 
-    const style_block = jQuery(`<div class="fix-header-styles"></div>`);
-    jQuery('body').append(style_block);
+    fixTopPositions();
 
     function checkFix(element, expectedTop, iterationsLeft, myFixNumber){
         jQuery.data(this, 'checkFixTimer', setTimeout(function () {
