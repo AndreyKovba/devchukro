@@ -62,11 +62,17 @@ jQuery(document).ready(function () {
         if (searchForm.is(':visible')) {
             searchForm.hide();
             fusionMenuCart.css('float', 'right');
+            jQuery(this).css('background-color', 'black');
+            jQuery(this).find('.magnify').show();
+            jQuery(this).find('.cross').hide();
             fixTopPositions();
         }
         else {
             searchForm.css('display', 'inline-block');
             fusionMenuCart.css('float', 'none');
+            jQuery(this).css('background-color', 'inherit');
+            jQuery(this).find('.magnify').hide();
+            jQuery(this).find('.cross').show();
             fixTopPositions();
         }
     });
@@ -74,7 +80,7 @@ jQuery(document).ready(function () {
     /**********fixWpAdminBar end****************/
 
     function isSmallScreen() {
-        return jQuery(window).width() * 1 <= 600
+        return jQuery(window).width() * 1 <= 615
     }
 
     jQuery('#menu-main .search').remove();

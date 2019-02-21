@@ -4,12 +4,12 @@ function my_theme_enqueue_styles() {
     $parent_style = 'parent-style';
     wp_enqueue_style( $parent_style, get_template_directory_uri() . '/style.css?v=190220' );
     wp_enqueue_style( 'child-style',
-        get_stylesheet_directory_uri() . '/main.css?v=19.02.20.2',
+        get_stylesheet_directory_uri() . '/main.css?v=19.02.20.3',
         array( $parent_style ),
         wp_get_theme()->get('Version')
     );
 
-    wp_register_script('common-script', get_stylesheet_directory_uri() . '/common.js', [], '19.02.20.2', true);
+    wp_register_script('common-script', get_stylesheet_directory_uri() . '/common.js', [], '19.02.20.3', true);
     wp_enqueue_script('common-script');
 }
 add_action( 'wp_enqueue_scripts', 'my_theme_enqueue_styles' );
@@ -214,6 +214,7 @@ function avada_add_search_to_main_nav( $items, $args ) {
             );
             $site_url = get_site_url();
             $image_src = get_stylesheet_directory_uri() . '/CMF-Logo-X.png';
+            $cross_src = get_stylesheet_directory_uri() . '/cross.png';
             $items = "<li class='top-menu-li'>" . get_avada_mobile_main_menu() . "</li>
                 <li class='top-menu-aligned'>
                     <a
@@ -226,7 +227,7 @@ function avada_add_search_to_main_nav( $items, $args ) {
                 <li class='top-menu-aligned'>
                     <div class='search-in-menu'>
                         $searchForm
-                        <div class='show-search-button'></div>
+                        <div class='show-search-button'><span class='magnify'></span><img class='cross' src='{$cross_src}'/></div>
                     </div>
                 </li>" .
                 $items;

@@ -471,4 +471,7 @@ li.product.product-list-view .buy-button-clearfix{
     .top-menu-aligned {
         margin-top: 6px;
     }
+    .fusion-secondary-menu .cross {
+        display: none;
+    }
 }
